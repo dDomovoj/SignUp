@@ -1,0 +1,53 @@
+PODS:
+  - PinLayout (1.7.6)
+  - SwiftGen (5.3.0)
+  - SwiftLint (0.25.1)
+  - Utility (0.1.9):
+    - Utility/Default (= 0.1.9)
+  - Utility/Core (0.1.9)
+  - Utility/Default (0.1.9):
+    - Utility/Core
+    - Utility/FormatterPool
+    - Utility/String
+    - Utility/UI
+    - Utility/UIExtension
+    - Utility/Vectors
+  - Utility/Flowable (0.1.9)
+  - Utility/FormatterPool (0.1.9)
+  - Utility/String (0.1.9):
+    - Utility/Core
+  - Utility/UI (0.1.9)
+  - Utility/UIExtension (0.1.9)
+  - Utility/Vectors (0.1.9)
+
+DEPENDENCIES:
+  - PinLayout
+  - SwiftGen
+  - SwiftLint
+  - Utility (from `https://github.com/dDomovoj/Utility`)
+  - Utility/Flowable (from `https://github.com/dDomovoj/Utility`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - PinLayout
+    - SwiftGen
+    - SwiftLint
+
+EXTERNAL SOURCES:
+  Utility:
+    :git: https://github.com/dDomovoj/Utility
+
+CHECKOUT OPTIONS:
+  Utility:
+    :commit: 1a5f2d09a881ad14396f6f8ac1571e66fa92b467
+    :git: https://github.com/dDomovoj/Utility
+
+SPEC CHECKSUMS:
+  PinLayout: 359b7ce1714450139463595ef0a9b0046be215c0
+  SwiftGen: 4379bd3640b0a212a0f6ea3c494adba385513d10
+  SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
+  Utility: 7191ce997448f368738ad1daecd342a06694cb13
+
+PODFILE CHECKSUM: 64c2149cece6682cb447ebf9d32152c23051d1a4
+
+COCOAPODS: 1.5.3

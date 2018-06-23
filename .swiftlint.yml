@@ -1,0 +1,17 @@
+excluded:
+  - Pods
+  - "SignUp/Source/Generated"
+line_length: 120
+nesting:
+  type_level: 2
+identifier_name:
+  excluded:
+    - id
+    - ok
+    - to
+    - x
+    - y
+    - z
+    - i
+    - k
+    - j
