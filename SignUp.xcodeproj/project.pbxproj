@@ -18,6 +18,11 @@
 		5C1EF78220E169C9000C7213 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C1EF77F20E169C8000C7213 /* OpenSans-Light.ttf */; };
 		5C1EF78320E169C9000C7213 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C1EF78020E169C9000C7213 /* OpenSans-Semibold.ttf */; };
 		5C1EF78520E16AA6000C7213 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1EF78420E16AA6000C7213 /* Fonts.swift */; };
+		5C1EF78720E16C64000C7213 /* GetStarted.ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1EF78620E16C64000C7213 /* GetStarted.ViewController.swift */; };
+		5C1EF78920E16C9F000C7213 /* Welcome.ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1EF78820E16C9F000C7213 /* Welcome.ViewController.swift */; };
+		5C1EF78C20E16FB4000C7213 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1EF78B20E16FB4000C7213 /* View.swift */; };
+		5C1EF78E20E16FBB000C7213 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1EF78D20E16FBB000C7213 /* Label.swift */; };
+		5C1EF79020E16FC2000C7213 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1EF78F20E16FC2000C7213 /* ImageView.swift */; };
 		5CA985BF20DE9D8C00ED937E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA985BE20DE9D8C00ED937E /* AppDelegate.swift */; };
 		5CA985C120DE9D8C00ED937E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA985C020DE9D8C00ED937E /* ViewController.swift */; };
 		5CA985C620DE9D8D00ED937E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CA985C520DE9D8D00ED937E /* Assets.xcassets */; };
@@ -37,6 +42,11 @@
 		5C1EF77F20E169C8000C7213 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		5C1EF78020E169C9000C7213 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		5C1EF78420E16AA6000C7213 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		5C1EF78620E16C64000C7213 /* GetStarted.ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStarted.ViewController.swift; sourceTree = "<group>"; };
+		5C1EF78820E16C9F000C7213 /* Welcome.ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.ViewController.swift; sourceTree = "<group>"; };
+		5C1EF78B20E16FB4000C7213 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		5C1EF78D20E16FBB000C7213 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		5C1EF78F20E16FC2000C7213 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		5CA985BB20DE9D8C00ED937E /* SignUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA985BE20DE9D8C00ED937E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CA985C020DE9D8C00ED937E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,10 +71,11 @@
 		5C10390620DEA494009EE56A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				5C10390A20DEA4BB009EE56A /* Generated */,
 				5C10390920DEA4A9009EE56A /* AppDelegate */,
+				5C10390A20DEA4BB009EE56A /* Generated */,
 				5C10390720DEA49D009EE56A /* Screens */,
 				5C10390820DEA4A2009EE56A /* Services */,
+				5C1EF78A20E16FA8000C7213 /* Views */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -102,8 +113,8 @@
 		5C10390A20DEA4BB009EE56A /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				5C1EF78420E16AA6000C7213 /* Fonts.swift */,
 				5C10392020DEA6D0009EE56A /* Colors.swift */,
+				5C1EF78420E16AA6000C7213 /* Fonts.swift */,
 				5C10391F20DEA6D0009EE56A /* Images.swift */,
 				5C10391E20DEA6D0009EE56A /* Strings.swift */,
 			);
@@ -135,6 +146,7 @@
 		5C10392820E15B80009EE56A /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				5C1EF78820E16C9F000C7213 /* Welcome.ViewController.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -142,6 +154,7 @@
 		5C10392920E15B9D009EE56A /* GetStarted */ = {
 			isa = PBXGroup;
 			children = (
+				5C1EF78620E16C64000C7213 /* GetStarted.ViewController.swift */,
 			);
 			path = GetStarted;
 			sourceTree = "<group>";
@@ -189,6 +202,16 @@
 				5C1EF78020E169C9000C7213 /* OpenSans-Semibold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5C1EF78A20E16FA8000C7213 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5C1EF78F20E16FC2000C7213 /* ImageView.swift */,
+				5C1EF78D20E16FBB000C7213 /* Label.swift */,
+				5C1EF78B20E16FB4000C7213 /* View.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5CA985B220DE9D8C00ED937E = {
@@ -349,11 +372,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SignUp/Pods-SignUp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PinLayout/PinLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyAttributes/SwiftyAttributes.framework",
 				"${BUILT_PRODUCTS_DIR}/Utility/Utility.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyAttributes.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Utility.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,13 +393,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1EF79020E16FC2000C7213 /* ImageView.swift in Sources */,
 				5C1EF78520E16AA6000C7213 /* Fonts.swift in Sources */,
 				5CA985C120DE9D8C00ED937E /* ViewController.swift in Sources */,
+				5C1EF78C20E16FB4000C7213 /* View.swift in Sources */,
 				5C10392720E15B69009EE56A /* NavigationController.swift in Sources */,
+				5C1EF78E20E16FBB000C7213 /* Label.swift in Sources */,
 				5C10392320DEA6D0009EE56A /* Colors.swift in Sources */,
 				5C10392220DEA6D0009EE56A /* Images.swift in Sources */,
 				5C10392120DEA6D0009EE56A /* Strings.swift in Sources */,
+				5C1EF78720E16C64000C7213 /* GetStarted.ViewController.swift in Sources */,
 				5CA985BF20DE9D8C00ED937E /* AppDelegate.swift in Sources */,
+				5C1EF78920E16C9F000C7213 /* Welcome.ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
