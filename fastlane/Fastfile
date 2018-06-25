@@ -5,7 +5,7 @@ end
 lane :swiftgen do
   FileUtils.cd '..' do
     Helper.backticks("./Pods/SwiftGen/bin/swiftgen xcassets --param enumName=Images -t swift4 #{$target_name}/Resources/Assets.xcassets -o #{$target_name}/Source/Generated/Images.swift")
-    # Helper.backticks("./Pods/SwiftGen/bin/swiftgen fonts --param enumName=Fonts -p #{$target_name}/Resources/fonts.stencil #{$target_name}/Resources/Fonts -o #{$target_name}/Source/Generated/Fonts.swift")
+    Helper.backticks("./Pods/SwiftGen/bin/swiftgen fonts --param enumName=Fonts -p #{$target_name}/Resources/fonts.stencil #{$target_name}/Resources/Fonts -o #{$target_name}/Source/Generated/Fonts.swift")
     Helper.backticks("./Pods/SwiftGen/bin/swiftgen colors --param enumName=Colors -t literals-swift4 #{$target_name}/Resources/colors.json -o #{$target_name}/Source/Generated/Colors.swift")
     Helper.backticks("./Pods/SwiftGen/bin/swiftgen strings -t structured-swift4 #{$target_name}/Resources/en.lproj/Localizable.strings -o #{$target_name}/Source/Generated/Strings.swift")
   end

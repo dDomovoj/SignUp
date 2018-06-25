@@ -17,10 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: LaunchOptions? = nil) -> Bool {
+    setupUI()
+    return true
+  }
+
+  func application(_ application: UIApplication,
+                   supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+    return .portrait
+  }
+}
+
+private extension AppDelegate {
+
+  func setupUI() {
+    let viewController = ViewController()
+    let navigationController = NavigationController(rootViewController: viewController)
     let bounds = UIScreen.main.bounds
     window = UIWindow(frame: bounds)
-    window?.rootViewController = ViewController()
+    window?.rootViewController = navigationController
     window?.makeKeyAndVisible()
-    return true
   }
 }
