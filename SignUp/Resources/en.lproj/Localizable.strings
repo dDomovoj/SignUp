@@ -1,2 +1,14 @@
-"test_value" = "Test text";
-"test_group.test_value" = "Test grouped text";
+"welcome.paging.first.title" = "Welcome\nto MyNetDiary";
+"welcome.paging.first.highlight" = "MyNetDiary";
+"welcome.paging.first.text" = "Achieve your weight and health\ngoals by tracking food and\neating better. Get active and\nstay motivated!";
+"welcome.paging.second.title" = "Plan your goals";
+"welcome.paging.second.text" = "MyNetDiary helps to create a\npersonalized plan that will help you get where you want to be.";
+"welcome.paging.third.title" = "Track food and exercise";
+"welcome.paging.third.text" = "Huge food database and barcode scanning make food entry a breeze.";
+"welcome.paging.fourth.title" = "Get motivated";
+"welcome.paging.fourth.text" = "Use our expert tips and connect with friends, family, and our community.";
+"welcome.paging.fifth.title" = "Be healthy";
+"welcome.paging.fifth.text" = "More than just losing weight -\nMyNetDiary helps you make healthy food choices and get more active.";
+"welcome.buttons.i_m_new" = "I’m new";
+"welcome.buttons.sign_in.title" = "Sign In";
+"welcome.buttons.sign_in.subtitle" = "Already used MyNetDiary";

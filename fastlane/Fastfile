@@ -10,3 +10,25 @@ lane :swiftgen do
     Helper.backticks("./Pods/SwiftGen/bin/swiftgen strings -t structured-swift4 #{$target_name}/Resources/en.lproj/Localizable.strings -o #{$target_name}/Source/Generated/Strings.swift")
   end
 end
+
+lane :icon do |options|
+  appicon(
+    appicon_image_file: "fastlane/Icon.png",
+    appicon_devices: [:ipad, :iphone, :ios_marketing],
+    appicon_path: "#{$target_name}/Resources/Assets.xcassets"
+  )
+
+  case options[:env]
+  when 'prod'
+  else
+    add_dev_badge
+  end
+end
+
+private_lane :add_dev_badge do
+  begin
+    add_badge(custom: Dir.pwd + '/dev-overlay.png')
+    rescue => ex
+    UI.error(ex)
+  end
+end

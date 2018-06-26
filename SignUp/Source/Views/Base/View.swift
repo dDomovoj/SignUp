@@ -10,12 +10,22 @@ import UIKit
 
 class View: UIView {
 
+  override class var requiresConstraintBasedLayout: Bool {
+    return false
+  }
+
+  // MARK: - Init
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     setup()
   }
 
-  open func setup() {
-
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
+
+  // MARK: - Public
+
+  func setup() { }
 }

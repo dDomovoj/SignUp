@@ -8,12 +8,16 @@ target 'SignUp' do
 
   # UI
   pod 'PinLayout'
+  pod 'SwiftyAttributes'
+  pod 'Kingfisher'
   
   # Utils
-  pod 'SwiftLint'
-  pod 'SwiftGen'
   pod 'Utility', :git => 'https://github.com/dDomovoj/Utility'
   pod 'Utility/Flowable', :git => 'https://github.com/dDomovoj/Utility'
+
+  # Other
+  pod 'SwiftLint'
+  pod 'SwiftGen'
 end
 
 post_install do |installer| 

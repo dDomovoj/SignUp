@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import class Utility.UI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,10 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 }
 
+// MARK: - Private
+
 private extension AppDelegate {
 
   func setupUI() {
-    let viewController = ViewController()
+    UI.baseWidths = [.phone: 1242]
+    let viewController = Welcome.ViewController()
     let navigationController = NavigationController(rootViewController: viewController)
     let bounds = UIScreen.main.bounds
     window = UIWindow(frame: bounds)
