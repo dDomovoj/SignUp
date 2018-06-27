@@ -62,6 +62,7 @@ class NavigationController: UINavigationController {
 private extension NavigationController {
 
   func setup() {
+    navigationBar.tintColor = Colors.green
     navigationBar.shadowImage = UIImage()
     navigationBar.isTranslucent = true
     navigationBar.setBackgroundImage(UIImage(), for: .default)

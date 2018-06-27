@@ -60,6 +60,7 @@ class ViewController: UIViewController {
 
   override func loadView() {
     super.loadView()
+    navigationItem.title = ""
     view.backgroundColor = .random(.light)
   }
 }

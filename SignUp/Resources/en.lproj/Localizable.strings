@@ -12,3 +12,6 @@
 "welcome.buttons.i_m_new" = "I’m new";
 "welcome.buttons.sign_in.title" = "Sign In";
 "welcome.buttons.sign_in.subtitle" = "Already used MyNetDiary";
+"sign_in.title" = "Sign In";
+"alerts.buttons.ok" = "OK";
+"alerts.buttons.cancel" = "Cancel";

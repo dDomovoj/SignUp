@@ -38,6 +38,7 @@
 		5CE8592F20E2D552001AC332 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8592E20E2D552001AC332 /* String+Extensions.swift */; };
 		5CE8593220E2D8BF001AC332 /* GreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8593120E2D8BF001AC332 /* GreenButton.swift */; };
 		5CE8593420E2D91D001AC332 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8593320E2D91D001AC332 /* UIImage+Extensions.swift */; };
+		5CF0AADD20E4078B009C5F36 /* WIP.ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF0AADC20E4078B009C5F36 /* WIP.ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		5CE8592E20E2D552001AC332 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		5CE8593120E2D8BF001AC332 /* GreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenButton.swift; sourceTree = "<group>"; };
 		5CE8593320E2D91D001AC332 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		5CF0AADC20E4078B009C5F36 /* WIP.ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIP.ViewController.swift; sourceTree = "<group>"; };
 		A4BDBD58347174104067F1E9 /* Pods-SignUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignUp/Pods-SignUp.debug.xcconfig"; sourceTree = "<group>"; };
 		C7E250A4B6BC9B2D440694D0 /* Pods_SignUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,6 +109,7 @@
 		5C10390720DEA49D009EE56A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				5CF0AADB20E40774009C5F36 /* WIP */,
 				5C10390C20DEA4D2009EE56A /* Base */,
 				5C10392A20E15BBB009EE56A /* CurrentWeight */,
 				5C10392D20E15BDA009EE56A /* DateOfBirth */,
@@ -306,6 +309,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		5CF0AADB20E40774009C5F36 /* WIP */ = {
+			isa = PBXGroup;
+			children = (
+				5CF0AADC20E4078B009C5F36 /* WIP.ViewController.swift */,
+			);
+			path = WIP;
+			sourceTree = "<group>";
+		};
 		D1E7176AAF0D3403556BAFD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +485,7 @@
 				5C10392320DEA6D0009EE56A /* Colors.swift in Sources */,
 				5C10392220DEA6D0009EE56A /* Images.swift in Sources */,
 				5C10392120DEA6D0009EE56A /* Strings.swift in Sources */,
+				5CF0AADD20E4078B009C5F36 /* WIP.ViewController.swift in Sources */,
 				5C549A7020E2ACCF0053D3FF /* Reusable.swift in Sources */,
 				5C549A6720E2A63B0053D3FF /* PagingCell.swift in Sources */,
 				5CE8593420E2D91D001AC332 /* UIImage+Extensions.swift in Sources */,

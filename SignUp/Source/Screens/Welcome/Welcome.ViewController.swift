@@ -149,7 +149,8 @@ private extension Welcome.ViewController {
   }
 
   func signInButtonTap() {
-    print(#function)
+    let signInViewController = WIP.ViewController().with { $0.title = L10n.SignIn.title }
+    navigationController?.pushViewController(signInViewController, animated: true)
   }
 
   // MARK: Update
