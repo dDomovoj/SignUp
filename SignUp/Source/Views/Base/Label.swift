@@ -7,13 +7,14 @@
 //
 
 import UIKit
-import SwiftyAttributes
 
 class Label: UILabel {
 
   override class var requiresConstraintBasedLayout: Bool {
     return false
   }
+
+  var shouldInheritTintColor: Bool = false { didSet { updateTextColorWithTintColorIfNeeded() } }
 
   // MARK: - Init
 
@@ -29,4 +30,22 @@ class Label: UILabel {
   // MARK: - Public
 
   func setup() { }
+
+  // MARK: - Overrides
+
+  override func tintColorDidChange() {
+    super.tintColorDidChange()
+    updateTextColorWithTintColorIfNeeded()
+  }
+}
+
+// MARK: - Private
+
+private extension Label {
+
+  func updateTextColorWithTintColorIfNeeded() {
+    guard shouldInheritTintColor else { return }
+
+    textColor = superview?.tintColor ?? textColor
+  }
 }

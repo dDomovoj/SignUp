@@ -46,7 +46,7 @@ extension Welcome {
       let fade = ImageTransition.fade(0.3)
       let options: [KingfisherOptionsInfoItem] = [.backgroundDecode, .transition(fade)]
       imageView.kf.setImage(with: url, placeholder: nil, options: options, progressBlock: nil) { _, error, _, url in
-        error.with { print("URL:\(url) - \($0.localizedDescription)") }
+        error.with { print("URL: \(url?.absoluteString ?? "unknown") - \($0.localizedDescription)") }
       }
     }
   }

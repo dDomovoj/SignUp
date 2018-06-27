@@ -72,7 +72,7 @@ extension WIP {
       $0.image = Images.underConstruction
     }
 
-    let titleLabel = Label().with {
+    let textLabel = Label().with {
       $0.numberOfLines = 0
       $0.textAlignment = .center
       $0.font = Fonts.regular.font(size: 20.0)
@@ -107,10 +107,10 @@ extension WIP {
     override func loadView() {
       super.loadView()
       view.backgroundColor = .white
-      view.addSubviews([button, imageView, titleLabel, actionButton])
+      view.addSubviews([button, imageView, textLabel, actionButton])
       let title = self.title ?? tabBarItem.title ?? navigationItem.title
       let name = title.map { $0.length > 0 ? "\n\n\($0)\n\n" : "" } ?? ""
-      titleLabel.text = "Ooops... \(name)is under Construction"
+      textLabel.text = "Ooops... \(name)is under Construction"
       view.setNeedsLayout()
 
       button.addTarget(self, action: #selector(dismiss(_:)), for: .touchUpInside)
@@ -142,7 +142,7 @@ extension WIP {
         .vCenter(to: view.edge.vCenter).marginTop(-view.bounds.size.height * 0.15)
         .width(side * 0.5)
         .aspectRatio()
-      titleLabel.pin.below(of: imageView, aligned: .center)
+      textLabel.pin.below(of: imageView, aligned: .center)
         .marginTop(40.ui)
         .width(85%)
         .sizeToFit(.width)

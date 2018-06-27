@@ -18,6 +18,24 @@ internal enum L10n {
     }
   }
 
+  internal enum GetStarted {
+    /// Import your current weight, height, and date of birth from the Health App, to get you started faster
+    internal static let adviceText = L10n.tr("Localizable", "get_started.advice_text")
+    /// Use Health App data
+    internal static let healthAppDataUsage = L10n.tr("Localizable", "get_started.health_app_data_usage")
+    /// Enter your gender, it’s important for\ncalories calculation - female bodies\nneed fewer calories
+    internal static let text = L10n.tr("Localizable", "get_started.text")
+    /// Get Started
+    internal static let title = L10n.tr("Localizable", "get_started.title")
+
+    internal enum Buttons {
+      /// Female
+      internal static let female = L10n.tr("Localizable", "get_started.buttons.female")
+      /// Male
+      internal static let male = L10n.tr("Localizable", "get_started.buttons.male")
+    }
+  }
+
   internal enum SignIn {
     /// Sign In
     internal static let title = L10n.tr("Localizable", "sign_in.title")

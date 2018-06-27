@@ -12,12 +12,22 @@ import Utility
 
 class ViewController: UIViewController {
 
+  let titleLabel = Label().with {
+    $0.shouldInheritTintColor = true
+    $0.font = Fonts.OpenSans.regular.font(size: 44.ui)
+    $0.textAlignment = .center
+  }
+
+  // MARK: - Properties
+
   var activeViewController: UIViewController? {
     if let presentedViewController = presentedViewController, !presentedViewController.isBeingDismissed {
       return presentedViewController
     }
     return nil
   }
+
+  var safeTopGuide: CGFloat { return topLayoutGuide.length }
 
   // MARK: - Overrides
 
@@ -61,6 +71,10 @@ class ViewController: UIViewController {
   override func loadView() {
     super.loadView()
     navigationItem.title = ""
-    view.backgroundColor = .random(.light)
+    navigationItem.titleView = titleLabel
+    view.backgroundColor = Colors.white
   }
+
+  // MARK: - Public
+
 }

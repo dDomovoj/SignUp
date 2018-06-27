@@ -54,7 +54,7 @@ extension Welcome {
       let seed = type(of: self).seed
       let width = UIScreen.main.bounds.size.width * UIScreen.main.scale
       let height = UIScreen.main.bounds.size.height * UIScreen.main.scale
-      let index = ((1 + rawValue) * seed) % 1000 + 1
+      let index = abs(seed.multipliedReportingOverflow(by: 1 + rawValue).partialValue) % 1000 + 1
       return "https://picsum.photos/\(width.formatted(".0"))/\(height.formatted(".0"))/?image=\(index)"
     }
   }

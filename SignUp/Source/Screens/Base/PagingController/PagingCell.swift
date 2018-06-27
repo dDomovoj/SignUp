@@ -27,7 +27,5 @@ class PagingCollectionCell: Cell, Reusable {
     imageView.pin.all()
   }
 
-  func setup(with data: Data) {
-    
-  }
+  func setup(with data: Data) { }
 }

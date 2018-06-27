@@ -13,5 +13,11 @@
 "welcome.buttons.sign_in.title" = "Sign In";
 "welcome.buttons.sign_in.subtitle" = "Already used MyNetDiary";
 "sign_in.title" = "Sign In";
+"get_started.title" = "Get Started";
+"get_started.text" = "Enter your gender, it’s important for\ncalories calculation - female bodies\nneed fewer calories";
+"get_started.health_app_data_usage" = "Use Health App data";
+"get_started.advice_text" = "Import your current weight, height, and date of birth from the Health App, to get you started faster";
+"get_started.buttons.male" = "Male";
+"get_started.buttons.female" = "Female";
 "alerts.buttons.ok" = "OK";
 "alerts.buttons.cancel" = "Cancel";

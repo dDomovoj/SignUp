@@ -13,6 +13,10 @@ import PinLayout
 
 class GreenButton: Button {
 
+  enum Const {
+    static let height = 90.ui
+  }
+
   var title: String? { didSet { update() } }
   var subtitle: String? { didSet { update() } }
 
@@ -26,14 +30,14 @@ class GreenButton: Button {
     let image = UIImage.pixel(with: Colors.green)
     setBackgroundImage(image, for: .normal)
     clipsToBounds = true
-    layer.cornerRadius = 6.ui
+    layer.cornerRadius = 3.ui
     addSubview(subtitleLabel)
   }
 
   override func titleRect(forContentRect contentRect: CGRect) -> CGRect {
     var rect = super.titleRect(forContentRect: contentRect)
     if (subtitle?.length ?? 0) > 0 {
-      rect.origin.y -= 20.ui
+      rect.origin.y -= 10.ui
     }
     return rect
   }
@@ -41,8 +45,8 @@ class GreenButton: Button {
   override func layoutSubviews() {
     super.layoutSubviews()
     subtitleLabel.pin
-      .top(to: titleLabel?.edge.bottom ?? edge.vCenter).marginTop(-10.ui)
-      .start(36.ui).end(36.ui)
+      .top(to: titleLabel?.edge.bottom ?? edge.vCenter).marginTop(-5.ui)
+      .start(18.ui).end(18.ui)
       .sizeToFit(.widthFlexible)
   }
 }
@@ -53,13 +57,13 @@ private extension GreenButton {
 
   func update() {
     let title = self.title?.uppercased()
-      .withFont(Fonts.OpenSans.regular.font(size: 64.ui))
+      .withFont(Fonts.OpenSans.regular.font(size: 32.ui))
       .withTextColor(Colors.white)
     setAttributedTitle(title, for: .normal)
 
     subtitleLabel.isHidden = (subtitle?.length ?? 0) == 0
     subtitleLabel.attributedText = subtitle?
-      .withFont(Fonts.OpenSans.semibold.font(size: 40.ui))
+      .withFont(Fonts.OpenSans.semibold.font(size: 20.ui))
       .withTextColor(Colors.greenSalad)
     setNeedsLayout()
   }

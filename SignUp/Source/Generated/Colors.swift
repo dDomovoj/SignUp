@@ -15,6 +15,8 @@
 internal extension Colors {
   /// 0x000000ff (r: 0, g: 0, b: 0, a: 255)
   static let black = #colorLiteral(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+  /// 0xc5e5f3ff (r: 197, g: 229, b: 243, a: 255)
+  static let blueLight = #colorLiteral(red: 0.772549, green: 0.898039, blue: 0.952941, alpha: 1.0)
   /// 0x505a68ff (r: 80, g: 90, b: 104, a: 255)
   static let grayBackgroundBlue = #colorLiteral(red: 0.313726, green: 0.352941, blue: 0.407843, alpha: 1.0)
   /// 0x5a6686ff (r: 90, g: 102, b: 134, a: 255)

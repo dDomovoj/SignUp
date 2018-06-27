@@ -1,11 +1,12 @@
 {
   "black": "000000",
+  "blue.light": "c5e5f3",
   "gray.backgroundBlue": "505a68",
   "gray.darkBlue": "5a6686",
   "gray.lightBlue": "a7c9d8",
   "gray.midBlue": "78829e",
   "green": "29b115",
-  "greenDark": "25a114",
-  "greenSalad": "caf993",
+  "green.dark": "25a114",
+  "green.salad": "caf993",
   "white": "ffffff"
 }

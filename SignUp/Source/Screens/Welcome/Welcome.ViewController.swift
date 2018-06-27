@@ -8,19 +8,15 @@
 
 import UIKit
 import SwiftyAttributes
-import class Utility.GradientView
 import PinLayout
+import class Utility.GradientView
+import class Utility.UI
 
 enum Welcome {}
 
 extension Welcome {
 
   class ViewController: SignUp.ViewController {
-
-    enum Const {
-      static let padding = 56.ui
-      static let buttonHeight = 180.ui
-    }
 
     typealias Cell = Welcome.PageCell
     typealias Data = Cell.Data
@@ -41,11 +37,11 @@ extension Welcome {
       $0.colors = [(0.6, 0.0), (0.0, 1.0)]
         .map { .init(color: Colors.black.withAlphaComponent($0.0), location: $0.1) }
     }
-    let titleLabel = Label().with {
+    let pageTitleLabel = Label().with {
       $0.numberOfLines = 0
       $0.textAlignment = .center
     }
-    let textLabel = Label().with {
+    let pageTextLabel = Label().with {
       $0.numberOfLines = 0
       $0.textAlignment = .center
     }
@@ -89,30 +85,30 @@ extension Welcome {
       topGradientView.pin.start().end().top().height(30%)
       bottomGradientView.pin.start().end().bottom().height(40%)
       signUpButton.pin
-        .bottom(Const.padding + view.pin.safeArea.bottom)
-        .start(Const.padding)
-        .end(to: view.edge.hCenter).marginEnd(Const.padding * 0.5)
-        .height(Const.buttonHeight)
+        .bottom(UI.Const.padding + view.pin.safeArea.bottom)
+        .start(UI.Const.padding)
+        .end(to: view.edge.hCenter).marginEnd(UI.Const.padding * 0.5)
+        .height(GreenButton.Const.height)
       signInButton.pin
-        .start(to: signUpButton.edge.end).marginStart(Const.padding)
-        .bottom(Const.padding + view.pin.safeArea.bottom)
-        .end(Const.padding)
-        .height(Const.buttonHeight)
+        .start(to: signUpButton.edge.end).marginStart(UI.Const.padding)
+        .bottom(UI.Const.padding + view.pin.safeArea.bottom)
+        .end(UI.Const.padding)
+        .height(GreenButton.Const.height)
       pageControl.pin
         .hCenter()
         .width(80%).height(44.0)
-        .vCenter(to: signInButton.edge.top).marginBottom(84.ui)
+        .vCenter(to: signInButton.edge.top).marginBottom(42.ui)
       layoutLabels()
     }
 
     private func layoutLabels() {
       let navBarHeight = navigationController?.navigationBar.bounds.size.height ?? 0.0
-      titleLabel.pin.hCenter()
-        .top(topLayoutGuide.length - navBarHeight + 80.ui)
+      pageTitleLabel.pin.hCenter()
+        .top(safeTopGuide - navBarHeight + 40.ui)
         .width(80%)
         .sizeToFit(.widthFlexible)
-      textLabel.pin.hCenter().width(85%)
-        .bottom(to: signInButton.edge.top).marginBottom(150.ui)
+      pageTextLabel.pin.hCenter().width(85%)
+        .bottom(to: signInButton.edge.top).marginBottom(75.ui)
         .sizeToFit(.widthFlexible)
     }
   }
@@ -127,7 +123,7 @@ private extension Welcome.ViewController {
     asContainer().add(pagingController, to: containerView, animated: false)
     view.addSubviews(topGradientView, bottomGradientView)
     view.addSubview(pageControl)
-    view.addSubviews(titleLabel, textLabel)
+    view.addSubviews(pageTitleLabel, pageTextLabel)
     view.addSubviews(signUpButton, signInButton)
     signInButton.action = { [weak self] in self?.signInButtonTap() }
     signUpButton.action = { [weak self] in self?.registerButtonTap() }
@@ -145,12 +141,13 @@ private extension Welcome.ViewController {
   }
 
   func registerButtonTap() {
-    print(#function)
+    let viewController = GetStarted.ViewController()
+    navigationController?.pushViewController(viewController, animated: true)
   }
 
   func signInButtonTap() {
-    let signInViewController = WIP.ViewController().with { $0.title = L10n.SignIn.title }
-    navigationController?.pushViewController(signInViewController, animated: true)
+    let viewController = WIP.ViewController().with { $0.title = L10n.SignIn.title }
+    navigationController?.pushViewController(viewController, animated: true)
   }
 
   // MARK: Update
@@ -169,27 +166,27 @@ private extension Welcome.ViewController {
 
   func update(title: String, with highlight: String?) {
     let attributedTitle = title.uppercased()
-      .withFont(Fonts.OpenSans.light.font(size: 116.ui))
+      .withFont(Fonts.OpenSans.light.font(size: 58.ui))
       .withTextColor(Colors.white)
     if let highlight = highlight, let range = title.safeRange(of: highlight) {
-      let highlightAttribute = Attribute.font(Fonts.OpenSans.semibold.font(size: 116.ui))
+      let highlightAttribute = Attribute.font(Fonts.OpenSans.semibold.font(size: 58.ui))
       attributedTitle.addAttributes([highlightAttribute], range: range)
     }
 
     let options = UIViewAnimationOptions.transitionCrossDissolve
     UIView.transition(with: titleLabel, duration: 0.3, options: options, animations: {
-      self.titleLabel.attributedText = attributedTitle
+      self.pageTitleLabel.attributedText = attributedTitle
     })
   }
 
   func update(text: String) {
     let attributedText = text
-      .withFont(Fonts.OpenSans.regular.font(size: 70.ui))
+      .withFont(Fonts.OpenSans.regular.font(size: 35.ui))
       .withTextColor(Colors.white)
 
     let options = UIViewAnimationOptions.transitionCrossDissolve
-    UIView.transition(with: textLabel, duration: 0.3, options: options, animations: {
-      self.textLabel.attributedText = attributedText
+    UIView.transition(with: pageTextLabel, duration: 0.3, options: options, animations: {
+      self.pageTextLabel.attributedText = attributedText
     })
   }
 }

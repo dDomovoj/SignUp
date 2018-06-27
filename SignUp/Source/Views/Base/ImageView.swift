@@ -20,6 +20,12 @@ class ImageView: UIImageView {
     self.init(frame: .zero)
   }
 
+  convenience override init(image: UIImage?) {
+    let frame = image.map { CGRect(origin: .zero, size: $0.size) } ?? .zero
+    self.init(frame: frame)
+    self.image = image
+  }
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     setup()
