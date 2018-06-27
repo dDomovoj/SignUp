@@ -8,6 +8,7 @@
 
 import UIKit
 import PinLayout
+import Utility
 
 class PagingController<Cell: Reusable & UICollectionViewCell>: ViewController {
 
@@ -17,14 +18,15 @@ class PagingController<Cell: Reusable & UICollectionViewCell>: ViewController {
 
   private var pageObserver: NSKeyValueObservation?
   private(set) var selectedIndex: Int = NSNotFound {
-    didSet { if oldValue != selectedIndex { updatePageData?(selectedIndex) } }
+    didSet { if oldValue != selectedIndex { didChangeSelectedIndex?(selectedIndex) } }
   }
-  var updatePageData: ((Int) -> Void)?
+  var didChangeSelectedIndex: ((Int) -> Void)?
 
   // MARK: - Lifecycle
 
   override func loadView() {
     super.loadView()
+    automaticallyAdjustsScrollViewInsets = false
     setupSource()
   }
 
@@ -37,7 +39,10 @@ class PagingController<Cell: Reusable & UICollectionViewCell>: ViewController {
     super.viewDidLayoutSubviews()
     collectionView.pin.all()
     (collectionView.collectionViewLayout as? UICollectionViewFlowLayout).with {
-      $0.itemSize = view.bounds.size
+      let bounds = collectionView.bounds.size
+      let insets = collectionView.contentInset + $0.sectionInset
+      $0.itemSize = CGSize(width: bounds.width - insets.left - insets.right,
+                           height: bounds.height - insets.top - insets.bottom)
       $0.invalidateLayout()
     }
   }
@@ -77,12 +82,14 @@ private extension PagingController {
   }
 
   func updatePageDataWhenNeeded() {
-    pageObserver = collectionView.observe(\UICollectionView.bounds) { [weak self] collectionView, _ in
-      guard !CGRect(collectionView.contentSize).isEmpty else { return }
-
-      let focus = collectionView.bounds.midX
-      let index = floor(focus / collectionView.bounds.size.width)
-      self?.selectedIndex = Int(index)
+    pageObserver = collectionView.observe(\UICollectionView.bounds) { [weak self] _, _ in
+      self?.updateSelectedIndexWithCurrentOffset()
     }
+  }
+
+  func updateSelectedIndexWithCurrentOffset() {
+    let focus = collectionView.bounds.midX
+    let index = floor(focus / collectionView.bounds.size.width)
+    selectedIndex = Int(index)
   }
 }

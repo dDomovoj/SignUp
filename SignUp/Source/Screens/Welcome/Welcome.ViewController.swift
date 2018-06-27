@@ -68,6 +68,7 @@ extension Welcome {
 
     override func loadView() {
       super.loadView()
+      automaticallyAdjustsScrollViewInsets = false
       view.backgroundColor = Colors.grayBackgroundBlue
       addSubviews()
     }
@@ -75,7 +76,7 @@ extension Welcome {
     override func viewDidLoad() {
       super.viewDidLoad()
       pagingController.source.items = pages.map { .init(imageUrl: $0.imageUrl) }
-      pagingController.updatePageData = { [weak self] in
+      pagingController.didChangeSelectedIndex = { [weak self] in
         self?.updatePageData(at: $0)
       }
     }
@@ -105,8 +106,9 @@ extension Welcome {
     }
 
     private func layoutLabels() {
+      let navBarHeight = navigationController?.navigationBar.bounds.size.height ?? 0.0
       titleLabel.pin.hCenter()
-        .top(40.ui + view.pin.safeArea.top)
+        .top(topLayoutGuide.length - navBarHeight + 80.ui)
         .width(80%)
         .sizeToFit(.widthFlexible)
       textLabel.pin.hCenter().width(85%)
