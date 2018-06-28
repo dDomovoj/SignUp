@@ -46,10 +46,10 @@ extension Welcome {
       $0.textAlignment = .center
     }
     let pageControl = UIPageControl()
-    let signUpButton = GreenButton().with {
+    let signUpButton = SmallButton().with {
       $0.title = L10n.Welcome.Buttons.imNew
     }
-    let signInButton = GreenButton().with {
+    let signInButton = SmallButton().with {
       $0.title = L10n.Welcome.Buttons.SignIn.title
       $0.subtitle = L10n.Welcome.Buttons.SignIn.subtitle
     }
@@ -75,6 +75,14 @@ extension Welcome {
       pagingController.didChangeSelectedIndex = { [weak self] in
         self?.updatePageData(at: $0)
       }
+      signInButton.action = { [weak self] in
+        let viewController = WIP.ViewController().with { $0.title = L10n.SignIn.title }
+        self?.navigationController?.pushViewController(viewController, animated: true)
+      }
+      signUpButton.action = { [weak self] in
+        let viewController = GetStarted.ViewController()
+        self?.navigationController?.pushViewController(viewController, animated: true)
+      }
     }
 
     // MARK: - Layout
@@ -88,12 +96,12 @@ extension Welcome {
         .bottom(UI.Const.padding + view.pin.safeArea.bottom)
         .start(UI.Const.padding)
         .end(to: view.edge.hCenter).marginEnd(UI.Const.padding * 0.5)
-        .height(GreenButton.Const.height)
+        .height(SmallButton.Const.height)
       signInButton.pin
         .start(to: signUpButton.edge.end).marginStart(UI.Const.padding)
         .bottom(UI.Const.padding + view.pin.safeArea.bottom)
         .end(UI.Const.padding)
-        .height(GreenButton.Const.height)
+        .height(SmallButton.Const.height)
       pageControl.pin
         .hCenter()
         .width(80%).height(44.0)
@@ -125,8 +133,6 @@ private extension Welcome.ViewController {
     view.addSubview(pageControl)
     view.addSubviews(pageTitleLabel, pageTextLabel)
     view.addSubviews(signUpButton, signInButton)
-    signInButton.action = { [weak self] in self?.signInButtonTap() }
-    signUpButton.action = { [weak self] in self?.registerButtonTap() }
     pageControl.addTarget(self, action: #selector(pageControlValueChanged(_:)), for: .valueChanged)
   }
 
@@ -138,16 +144,6 @@ private extension Welcome.ViewController {
     }
 
     pagingController.setSelectedIndex(pageControl.currentPage, animated: true)
-  }
-
-  func registerButtonTap() {
-    let viewController = GetStarted.ViewController()
-    navigationController?.pushViewController(viewController, animated: true)
-  }
-
-  func signInButtonTap() {
-    let viewController = WIP.ViewController().with { $0.title = L10n.SignIn.title }
-    navigationController?.pushViewController(viewController, animated: true)
   }
 
   // MARK: Update

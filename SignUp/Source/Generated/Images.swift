@@ -44,8 +44,23 @@ internal struct ColorAsset {
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Images {
+  internal enum CurrentWeight {
+    internal static let image = ImageAsset(name: "CurrentWeight/image")
+  }
+  internal enum DateOfBirth {
+    internal static let image = ImageAsset(name: "DateOfBirth/image")
+  }
   internal enum GetStarted {
-    internal static let gender = ImageAsset(name: "GetStarted/gender")
+    internal static let image = ImageAsset(name: "GetStarted/image")
+  }
+  internal enum Height {
+    internal static let image = ImageAsset(name: "Height/image")
+  }
+  internal enum TargetDailyCalories {
+    internal static let image = ImageAsset(name: "TargetDailyCalories/image")
+  }
+  internal enum TargetWeight {
+    internal static let image = ImageAsset(name: "TargetWeight/image")
   }
   internal enum Wip {
     internal static let buttonCancel = ImageAsset(name: "WIP/button.cancel")
@@ -56,7 +71,12 @@ internal enum Images {
   internal static let allColors: [ColorAsset] = [
   ]
   internal static let allImages: [ImageAsset] = [
-    GetStarted.gender,
+    CurrentWeight.image,
+    DateOfBirth.image,
+    GetStarted.image,
+    Height.image,
+    TargetDailyCalories.image,
+    TargetWeight.image,
     Wip.buttonCancel,
     Wip.underConstruction,
   ]

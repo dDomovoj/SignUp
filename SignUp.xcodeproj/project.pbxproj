@@ -23,6 +23,12 @@
 		5C1EF78C20E16FB4000C7213 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1EF78B20E16FB4000C7213 /* View.swift */; };
 		5C1EF78E20E16FBB000C7213 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1EF78D20E16FBB000C7213 /* Label.swift */; };
 		5C1EF79020E16FC2000C7213 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1EF78F20E16FC2000C7213 /* ImageView.swift */; };
+		5C3870E920E557B00035634E /* CurrentWeight.VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3870E820E557B00035634E /* CurrentWeight.VC.swift */; };
+		5C3870EB20E55EE80035634E /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3870EA20E55EE80035634E /* LargeButton.swift */; };
+		5C3870ED20E560CD0035634E /* TargetWeight.VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3870EC20E560CD0035634E /* TargetWeight.VC.swift */; };
+		5C3870EF20E5613C0035634E /* YourHeight.VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3870EE20E5613C0035634E /* YourHeight.VC.swift */; };
+		5C3870F120E5622E0035634E /* DateOfBirth.VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3870F020E5622E0035634E /* DateOfBirth.VC.swift */; };
+		5C3870F320E562890035634E /* TargetDailyCalories.VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3870F220E562890035634E /* TargetDailyCalories.VC.swift */; };
 		5C549A6720E2A63B0053D3FF /* PagingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C549A6620E2A63B0053D3FF /* PagingCell.swift */; };
 		5C549A6920E2A8740053D3FF /* PagingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C549A6820E2A8740053D3FF /* PagingSource.swift */; };
 		5C549A6D20E2AC980053D3FF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C549A6C20E2AC980053D3FF /* Cell.swift */; };
@@ -36,11 +42,12 @@
 		5CBB180620E1772A00111110 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB180520E1772A00111110 /* Button.swift */; };
 		5CBB180820E17A0D00111110 /* PagingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB180720E17A0D00111110 /* PagingController.swift */; };
 		5CE8592F20E2D552001AC332 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8592E20E2D552001AC332 /* String+Extensions.swift */; };
-		5CE8593220E2D8BF001AC332 /* GreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8593120E2D8BF001AC332 /* GreenButton.swift */; };
+		5CE8593220E2D8BF001AC332 /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8593120E2D8BF001AC332 /* SmallButton.swift */; };
 		5CE8593420E2D91D001AC332 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8593320E2D91D001AC332 /* UIImage+Extensions.swift */; };
 		5CF0AADD20E4078B009C5F36 /* WIP.ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF0AADC20E4078B009C5F36 /* WIP.ViewController.swift */; };
 		5CF0AADF20E40EEB009C5F36 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF0AADE20E40EEB009C5F36 /* BackgroundView.swift */; };
 		5CF0AAE220E41224009C5F36 /* UI.Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF0AAE120E41224009C5F36 /* UI.Const.swift */; };
+		5CF0AAE420E5543D009C5F36 /* Input.ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF0AAE320E5543D009C5F36 /* Input.ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +68,12 @@
 		5C1EF78B20E16FB4000C7213 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		5C1EF78D20E16FBB000C7213 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		5C1EF78F20E16FC2000C7213 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		5C3870E820E557B00035634E /* CurrentWeight.VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeight.VC.swift; sourceTree = "<group>"; };
+		5C3870EA20E55EE80035634E /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
+		5C3870EC20E560CD0035634E /* TargetWeight.VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetWeight.VC.swift; sourceTree = "<group>"; };
+		5C3870EE20E5613C0035634E /* YourHeight.VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourHeight.VC.swift; sourceTree = "<group>"; };
+		5C3870F020E5622E0035634E /* DateOfBirth.VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfBirth.VC.swift; sourceTree = "<group>"; };
+		5C3870F220E562890035634E /* TargetDailyCalories.VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetDailyCalories.VC.swift; sourceTree = "<group>"; };
 		5C549A6620E2A63B0053D3FF /* PagingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCell.swift; sourceTree = "<group>"; };
 		5C549A6820E2A8740053D3FF /* PagingSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingSource.swift; sourceTree = "<group>"; };
 		5C549A6C20E2AC980053D3FF /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -75,11 +88,12 @@
 		5CBB180520E1772A00111110 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		5CBB180720E17A0D00111110 /* PagingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingController.swift; sourceTree = "<group>"; };
 		5CE8592E20E2D552001AC332 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		5CE8593120E2D8BF001AC332 /* GreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenButton.swift; sourceTree = "<group>"; };
+		5CE8593120E2D8BF001AC332 /* SmallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
 		5CE8593320E2D91D001AC332 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		5CF0AADC20E4078B009C5F36 /* WIP.ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIP.ViewController.swift; sourceTree = "<group>"; };
 		5CF0AADE20E40EEB009C5F36 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		5CF0AAE120E41224009C5F36 /* UI.Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.Const.swift; sourceTree = "<group>"; };
+		5CF0AAE320E5543D009C5F36 /* Input.ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.ViewController.swift; sourceTree = "<group>"; };
 		A4BDBD58347174104067F1E9 /* Pods-SignUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignUp/Pods-SignUp.debug.xcconfig"; sourceTree = "<group>"; };
 		C7E250A4B6BC9B2D440694D0 /* Pods_SignUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -169,6 +183,7 @@
 		5C10390C20DEA4D2009EE56A /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				5CF0AAE520E554A6009C5F36 /* Input */,
 				5CA985C020DE9D8C00ED937E /* ViewController.swift */,
 				5C10392620E15B69009EE56A /* NavigationController.swift */,
 				5CBB180920E17B2E00111110 /* PagingController */,
@@ -197,6 +212,7 @@
 		5C10392A20E15BBB009EE56A /* CurrentWeight */ = {
 			isa = PBXGroup;
 			children = (
+				5C3870E820E557B00035634E /* CurrentWeight.VC.swift */,
 			);
 			path = CurrentWeight;
 			sourceTree = "<group>";
@@ -204,6 +220,7 @@
 		5C10392B20E15BC5009EE56A /* TargetWeight */ = {
 			isa = PBXGroup;
 			children = (
+				5C3870EC20E560CD0035634E /* TargetWeight.VC.swift */,
 			);
 			path = TargetWeight;
 			sourceTree = "<group>";
@@ -211,6 +228,7 @@
 		5C10392C20E15BD0009EE56A /* YourHeight */ = {
 			isa = PBXGroup;
 			children = (
+				5C3870EE20E5613C0035634E /* YourHeight.VC.swift */,
 			);
 			path = YourHeight;
 			sourceTree = "<group>";
@@ -218,6 +236,7 @@
 		5C10392D20E15BDA009EE56A /* DateOfBirth */ = {
 			isa = PBXGroup;
 			children = (
+				5C3870F020E5622E0035634E /* DateOfBirth.VC.swift */,
 			);
 			path = DateOfBirth;
 			sourceTree = "<group>";
@@ -225,6 +244,7 @@
 		5C10392E20E15BEC009EE56A /* TargetDailyCalories */ = {
 			isa = PBXGroup;
 			children = (
+				5C3870F220E562890035634E /* TargetDailyCalories.VC.swift */,
 			);
 			path = TargetDailyCalories;
 			sourceTree = "<group>";
@@ -243,7 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				5CE8593020E2D877001AC332 /* Base */,
-				5CE8593120E2D8BF001AC332 /* GreenButton.swift */,
+				5CE8593120E2D8BF001AC332 /* SmallButton.swift */,
+				5C3870EA20E55EE80035634E /* LargeButton.swift */,
 				5CF0AADE20E40EEB009C5F36 /* BackgroundView.swift */,
 			);
 			path = Views;
@@ -329,6 +350,14 @@
 				5CF0AAE120E41224009C5F36 /* UI.Const.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		5CF0AAE520E554A6009C5F36 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				5CF0AAE320E5543D009C5F36 /* Input.ViewController.swift */,
+			);
+			path = Input;
 			sourceTree = "<group>";
 		};
 		D1E7176AAF0D3403556BAFD6 /* Frameworks */ = {
@@ -486,10 +515,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C1EF79020E16FC2000C7213 /* ImageView.swift in Sources */,
+				5C3870F320E562890035634E /* TargetDailyCalories.VC.swift in Sources */,
 				5CF0AAE220E41224009C5F36 /* UI.Const.swift in Sources */,
+				5C3870F120E5622E0035634E /* DateOfBirth.VC.swift in Sources */,
 				5CE8592F20E2D552001AC332 /* String+Extensions.swift in Sources */,
 				5C1EF78520E16AA6000C7213 /* Fonts.swift in Sources */,
-				5CE8593220E2D8BF001AC332 /* GreenButton.swift in Sources */,
+				5C3870EB20E55EE80035634E /* LargeButton.swift in Sources */,
+				5CE8593220E2D8BF001AC332 /* SmallButton.swift in Sources */,
 				5CA985C120DE9D8C00ED937E /* ViewController.swift in Sources */,
 				5CBB180820E17A0D00111110 /* PagingController.swift in Sources */,
 				5C549A6920E2A8740053D3FF /* PagingSource.swift in Sources */,
@@ -498,6 +530,9 @@
 				5C10392720E15B69009EE56A /* NavigationController.swift in Sources */,
 				5C1EF78E20E16FBB000C7213 /* Label.swift in Sources */,
 				5C10392320DEA6D0009EE56A /* Colors.swift in Sources */,
+				5C3870ED20E560CD0035634E /* TargetWeight.VC.swift in Sources */,
+				5C3870EF20E5613C0035634E /* YourHeight.VC.swift in Sources */,
+				5CF0AAE420E5543D009C5F36 /* Input.ViewController.swift in Sources */,
 				5C10392220DEA6D0009EE56A /* Images.swift in Sources */,
 				5C10392120DEA6D0009EE56A /* Strings.swift in Sources */,
 				5CF0AADD20E4078B009C5F36 /* WIP.ViewController.swift in Sources */,
@@ -511,6 +546,7 @@
 				5CBB180620E1772A00111110 /* Button.swift in Sources */,
 				5C549A7220E2ADC30053D3FF /* Welcome.PageCell.swift in Sources */,
 				5C1EF78920E16C9F000C7213 /* Welcome.ViewController.swift in Sources */,
+				5C3870E920E557B00035634E /* CurrentWeight.VC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

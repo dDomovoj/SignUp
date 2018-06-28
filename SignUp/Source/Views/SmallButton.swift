@@ -11,27 +11,33 @@ import UIKit
 import SwiftyAttributes
 import PinLayout
 
-class GreenButton: Button {
+class SmallButton: Button {
 
   enum Const {
     static let height = 90.ui
   }
-
-  var title: String? { didSet { update() } }
-  var subtitle: String? { didSet { update() } }
 
   let subtitleLabel = Label().with {
     $0.numberOfLines = 1
     $0.textAlignment = .center
   }
 
+  var title: String? { didSet { update() } }
+  var subtitle: String? { didSet { update() } }
+  var color: UIColor = Colors.green { didSet { update() } }
+
+  // MARK: - Lifecycle
+
   override func setup() {
     super.setup()
-    let image = UIImage.pixel(with: Colors.green)
-    setBackgroundImage(image, for: .normal)
     clipsToBounds = true
     layer.cornerRadius = 3.ui
     addSubview(subtitleLabel)
+  }
+
+  override func didMoveToSuperview() {
+    super.didMoveToSuperview()
+    update()
   }
 
   override func titleRect(forContentRect contentRect: CGRect) -> CGRect {
@@ -53,9 +59,14 @@ class GreenButton: Button {
 
 // MARK: - Private
 
-private extension GreenButton {
+private extension SmallButton {
 
   func update() {
+    guard superview != nil else { return }
+
+    let image = UIImage.pixel(with: color)
+    setBackgroundImage(image, for: .normal)
+
     let title = self.title?.uppercased()
       .withFont(Fonts.OpenSans.regular.font(size: 32.ui))
       .withTextColor(Colors.white)

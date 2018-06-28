@@ -18,6 +18,60 @@ internal enum L10n {
     }
   }
 
+  internal enum Common {
+
+    internal enum Buttons {
+      /// Finish
+      internal static let finish = L10n.tr("Localizable", "common.buttons.finish")
+      /// Hide
+      internal static let hide = L10n.tr("Localizable", "common.buttons.hide")
+      /// Next
+      internal static let next = L10n.tr("Localizable", "common.buttons.next")
+    }
+
+    internal enum Metrics {
+
+      internal enum Length {
+        /// cm
+        internal static let centimeters = L10n.tr("Localizable", "common.metrics.length.centimeters")
+        /// ft
+        internal static let feet = L10n.tr("Localizable", "common.metrics.length.feet")
+        /// inches
+        internal static let inches = L10n.tr("Localizable", "common.metrics.length.inches")
+        /// m
+        internal static let meters = L10n.tr("Localizable", "common.metrics.length.meters")
+      }
+
+      internal enum Time {
+        /// week
+        internal static let week = L10n.tr("Localizable", "common.metrics.time.week")
+      }
+
+      internal enum Weight {
+        /// kg
+        internal static let kilos = L10n.tr("Localizable", "common.metrics.weight.kilos")
+        /// lb
+        internal static let pounds = L10n.tr("Localizable", "common.metrics.weight.pounds")
+      }
+    }
+  }
+
+  internal enum CurrentWeight {
+    /// Enter your current weight in pounds as of today, e.g 220.5
+    internal static let text = L10n.tr("Localizable", "current_weight.text")
+    /// Current Weight
+    internal static let title = L10n.tr("Localizable", "current_weight.title")
+    /// Use metrics units
+    internal static let useMetricsUnits = L10n.tr("Localizable", "current_weight.use_metrics_units")
+  }
+
+  internal enum DateOfBirth {
+    /// Enter your date of birth. It will be used to calculate your age.
+    internal static let text = L10n.tr("Localizable", "date_of_birth.text")
+    /// Date of Birth
+    internal static let title = L10n.tr("Localizable", "date_of_birth.title")
+  }
+
   internal enum GetStarted {
     /// Import your current weight, height, and date of birth from the Health App, to get you started faster
     internal static let adviceText = L10n.tr("Localizable", "get_started.advice_text")
@@ -39,6 +93,26 @@ internal enum L10n {
   internal enum SignIn {
     /// Sign In
     internal static let title = L10n.tr("Localizable", "sign_in.title")
+  }
+
+  internal enum TargetDailyCalories {
+    /// by
+    internal static let by = L10n.tr("Localizable", "target_daily_calories.by")
+    /// Now
+    internal static let now = L10n.tr("Localizable", "target_daily_calories.now")
+    /// Target Date
+    internal static let targetDate = L10n.tr("Localizable", "target_daily_calories.target_date")
+    /// Target Daily Calories
+    internal static let title = L10n.tr("Localizable", "target_daily_calories.title")
+    /// Weekly Rate
+    internal static let weeklyRate = L10n.tr("Localizable", "target_daily_calories.weekly_rate")
+  }
+
+  internal enum TargetWeight {
+    /// Enter your target weight in pounds, e.g 220.5
+    internal static let text = L10n.tr("Localizable", "target_weight.text")
+    /// Target Weight
+    internal static let title = L10n.tr("Localizable", "target_weight.title")
   }
 
   internal enum Welcome {
@@ -94,6 +168,13 @@ internal enum L10n {
         internal static let title = L10n.tr("Localizable", "welcome.paging.third.title")
       }
     }
+  }
+
+  internal enum YourHeight {
+    /// Enter your height - the taller you are, the more calories your body needs
+    internal static let text = L10n.tr("Localizable", "your_height.text")
+    /// Your Height
+    internal static let title = L10n.tr("Localizable", "your_height.title")
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length nesting type_body_length type_name
