@@ -25,7 +25,7 @@ extension GetStarted {
       $0.font = Fonts.OpenSans.regular.font(size: 28.ui)
       $0.text = L10n.GetStarted.healthAppDataUsage
     }
-    let healthAppDataSwitch = UISwitch()
+    let healthAppDataSwitch = UISwitch().with { $0.onTintColor = Colors.green }
     let adviceLabel = Label().with {
       $0.textColor = Colors.grayDarkBlue
       $0.textAlignment = .center

@@ -38,7 +38,8 @@ extension YourHeight {
 
     override func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
-      button.pin.bottom().start().end().height(LargeButton.Const.height)
+      button.pin.bottom(view.pin.safeArea.bottom)
+        .start().end().height(LargeButton.Const.height)
     }
   }
 }

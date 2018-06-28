@@ -8,6 +8,7 @@
 
 import Foundation
 import PinLayout
+import SwiftyAttributes
 import class Utility.UI
 
 enum TargetDailyCalories { }
@@ -17,8 +18,7 @@ extension TargetDailyCalories {
   class ViewController: Input.ViewController {
 
     let finishButton = LargeButton().with { $0.title = L10n.Common.Buttons.finish }
-    let hideButton = LargeButton().with {
-      $0.color = Colors.greenDark
+    let hideButton = HideButton().with {
       $0.title = L10n.Common.Buttons.hide
     }
 
@@ -40,8 +40,12 @@ extension TargetDailyCalories {
 
     override func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
-      hideButton.pin.bottom().width(120.ui).end().height(LargeButton.Const.height)
-      finishButton.pin.bottom().start().end(to: hideButton.edge.start).height(LargeButton.Const.height)
+      imageView.pin.hCenter().top(safeTopGuide).marginTop(3.5%)
+        .width(397.ui).aspectRatio()
+      hideButton.pin.bottom(view.pin.safeArea.bottom)
+        .width(120.ui).end().height(LargeButton.Const.height)
+      finishButton.pin.bottom(view.pin.safeArea.bottom)
+        .start().end(to: hideButton.edge.start).height(LargeButton.Const.height)
     }
   }
 }

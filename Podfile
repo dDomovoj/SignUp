@@ -10,6 +10,7 @@ target 'SignUp' do
   pod 'PinLayout'
   pod 'SwiftyAttributes'
   pod 'Kingfisher'
+  pod 'KeyboardObserver'
   
   # Utils
   pod 'Utility', :git => 'https://github.com/dDomovoj/Utility'
