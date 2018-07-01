@@ -62,6 +62,9 @@ internal enum Images {
   internal enum TargetWeight {
     internal static let image = ImageAsset(name: "TargetWeight/image")
   }
+  internal enum Ui {
+    internal static let hideButton = ImageAsset(name: "UI/hide.button")
+  }
   internal enum Wip {
     internal static let buttonCancel = ImageAsset(name: "WIP/button.cancel")
     internal static let underConstruction = ImageAsset(name: "WIP/under_construction")
@@ -77,6 +80,7 @@ internal enum Images {
     Height.image,
     TargetDailyCalories.image,
     TargetWeight.image,
+    Ui.hideButton,
     Wip.buttonCancel,
     Wip.underConstruction,
   ]
