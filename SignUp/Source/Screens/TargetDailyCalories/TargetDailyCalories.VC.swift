@@ -32,20 +32,18 @@ extension TargetDailyCalories {
     let fromDateLabel = SmallLabel().with { $0.text = "Now" }
     let toDateLabel = SmallLabel().with { $0.text = "by Jun 5" }
 
-
-
-
     private(set) lazy var weeklyRateView = GenericInputView<WeekRate>().with {
       $0.assignInputView(self.weeklyRatePickerView)
       $0.valueTransform = { $0?.title ?? "-" }
     }
+
     let weeklyRateLabel = InputSubtitleLabel().with {
       $0.text = L10n.TargetDailyCalories.weeklyRate
     }
+
     let weeklyRatePickerView = UIPickerView().with {
       $0.backgroundColor = Colors.white
     }
-
 
     private(set) lazy var targetDateView = GenericInputView<Date>().with {
       $0.assignInputView(self.datePickerView)
@@ -58,9 +56,11 @@ extension TargetDailyCalories {
       }
       $0.value = Date().addingTimeInterval(28 * 24 * 60 * 60)
     }
+
     let targetDateLabel = InputSubtitleLabel().with {
       $0.text = L10n.TargetDailyCalories.targetDate
     }
+
     private(set) lazy var datePickerView = UIDatePicker().with {
       $0.datePickerMode = .date
       $0.backgroundColor = Colors.white
@@ -69,10 +69,6 @@ extension TargetDailyCalories {
       $0.addTarget(self, action: #selector(targetDateDidChange(_:)), for: .valueChanged)
     }
 
-
-
-
-    let inputContentView = View().with { $0.backgroundColor = .red }
     var finishButton: LargeButton { return button }
     let hideButton = HideButton().with {
       $0.title = L10n.Common.Buttons.hide
@@ -80,8 +76,7 @@ extension TargetDailyCalories {
 
     // MARK: - Properties
 
-    private let source = Source()
-    
+    private let pickerSource = Source()
 
     // MARK: - Lifecycle
 
@@ -91,7 +86,6 @@ extension TargetDailyCalories {
                              fromDateLabel, fromWeightLabel, toDateLabel, toWeightLabel,
                              weeklyRateView, weeklyRateLabel, targetDateView, targetDateLabel)
       view.addSubviews(hideButton, finishButton)
-      
     }
 
     override func viewDidLoad() {
@@ -102,11 +96,18 @@ extension TargetDailyCalories {
       showText()
       updateDailyCaloriesCount()
 
-      source.pickerView = weeklyRatePickerView
-      source.action = { [weak self] in
+      pickerSource.pickerView = weeklyRatePickerView
+      pickerSource.action = { [weak self] in
         self?.weeklyRateView.value = $0.first
       }
-      finishButton.action = { print("Finish") }
+      finishButton.action = { [weak self] in
+        let alert = UIAlertController(title: "Congratulations!",
+                                      message: "\nYou've done setting up MyNetDiary",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))
+        alert.view.tintColor = Colors.green
+        self?.present(alert, animated: true)
+      }
       hideButton.action = { [weak self] in
         self?.view.endEditing(true)
       }

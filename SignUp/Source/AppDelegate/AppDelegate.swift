@@ -34,7 +34,7 @@ private extension AppDelegate {
 
   func setupUI() {
     UI.baseWidths = [.phone: 640]
-    let viewController = TargetDailyCalories.ViewController()
+    let viewController = Welcome.ViewController()
     let navigationController = NavigationController(rootViewController: viewController)
     let bounds = UIScreen.main.bounds
     window = UIWindow(frame: bounds)
