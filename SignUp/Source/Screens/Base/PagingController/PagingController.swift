@@ -26,7 +26,6 @@ class PagingController<Cell: Reusable & UICollectionViewCell>: ViewController {
 
   override func loadView() {
     super.loadView()
-    automaticallyAdjustsScrollViewInsets = false
     setupSource()
   }
 

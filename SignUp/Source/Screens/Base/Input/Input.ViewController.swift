@@ -19,6 +19,10 @@ extension Input {
     // MARK: - UI
 
     let backgroundView = BackgroundView()
+    let scrollView = UIScrollView().with {
+      $0.showsVerticalScrollIndicator = false
+      $0.showsHorizontalScrollIndicator = false
+    }
     let imageView = ImageView().with { $0.contentMode = .scaleAspectFit  }
     let textLabel = Label().with {
       $0.textColor = Colors.grayDarkBlue
@@ -39,17 +43,34 @@ extension Input {
 
     override func loadView() {
       super.loadView()
-      view.addSubviews(backgroundView, imageView, textLabel)
+      view.addSubviews(backgroundView, scrollView)
+      scrollView.addSubviews(imageView, textLabel)
     }
 
     override func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
       backgroundView.pin.start().top().end().height(50%)
-      imageView.pin.hCenter().top(safeTopGuide).marginTop(3.5%)
+      scrollView.pin.top(safeTopGuide).start().end()
+        .bottom(view.pin.safeArea.bottom)
+      imageView.pin.hCenter().top().marginTop(3.5%)
         .width(210.ui).aspectRatio()
       textLabel.pin.hCenter().maxWidth(75%)
         .top(to: imageView.edge.bottom).marginTop(7%)
         .sizeToFit(.widthFlexible)
+      updateContentSize()
+    }
+
+    // MARK: - Public
+
+    func updateContentSize() {
+      let maxY = scrollView.subviews
+        .map { $0.frame.maxY }
+        .max() ?? 0.0
+      scrollView.contentSize = CGSize(width: view.bounds.size.width,
+                                      height: maxY + UI.Const.padding)
+      let realContentHeight = scrollView.contentSize.height
+        + scrollView.contentInset.top + scrollView.contentInset.bottom
+      scrollView.isScrollEnabled = realContentHeight > scrollView.bounds.size.height
     }
   }
 }

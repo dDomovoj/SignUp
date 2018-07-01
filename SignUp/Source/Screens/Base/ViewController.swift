@@ -73,6 +73,7 @@ class ViewController: UIViewController {
     navigationItem.title = ""
     navigationItem.titleView = titleLabel
     view.backgroundColor = Colors.white
+    automaticallyAdjustsScrollViewInsets = false
   }
 
   // MARK: - Public

@@ -64,7 +64,6 @@ extension Welcome {
 
     override func loadView() {
       super.loadView()
-      automaticallyAdjustsScrollViewInsets = false
       view.backgroundColor = Colors.grayBackgroundBlue
       addSubviews()
     }
