@@ -40,8 +40,8 @@ class HideButton: Button {
     let padding = 8.ui
     let imageOffset = (imageRect.width + padding * 0.5)
     let titleOffset = (titleRect.width + padding * 0.5)
-    titleEdgeInsets = UIEdgeInsetsMake(0.0, -imageOffset, 0.0, imageOffset)
-    imageEdgeInsets = UIEdgeInsetsMake(0.0, titleOffset, 0.0, -titleOffset)
+    titleEdgeInsets = UIEdgeInsets(0.0, -imageOffset, 0.0, imageOffset)
+    imageEdgeInsets = UIEdgeInsets(0.0, titleOffset, 0.0, -titleOffset)
   }
 }
 

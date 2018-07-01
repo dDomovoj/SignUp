@@ -19,7 +19,6 @@ extension DateOfBirth {
 
     // MARK: - UI
 
-    let button = LargeButton().with { $0.title = L10n.Common.Buttons.next }
     let inputLabel = Label().with {
       $0.textAlignment = .center
       $0.textColor = Colors.black
@@ -43,7 +42,7 @@ extension DateOfBirth {
     override func loadView() {
       super.loadView()
       scrollView.addSubview(inputLabel)
-      view.addSubviews(datePickerView, button)
+      view.addSubviews(datePickerView)
     }
 
     override func viewDidLoad() {

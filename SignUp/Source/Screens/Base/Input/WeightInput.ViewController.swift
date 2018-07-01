@@ -17,7 +17,6 @@ extension WeightInput {
   class ViewController: Input.ViewController {
 
     let weightInputView = NumericInputView()
-    let button = LargeButton().with { $0.title = L10n.Common.Buttons.next }
 
     private let keyboard = KeyboardObserver()
     private var keyboardHeight: CGFloat?
@@ -27,7 +26,6 @@ extension WeightInput {
     override func loadView() {
       super.loadView()
       scrollView.addSubviews(weightInputView)
-      view.addSubviews(button)
     }
 
     override func viewDidLoad() {
@@ -51,10 +49,14 @@ extension WeightInput {
         .height(50)
         .top(to: imageView.edge.bottom).marginTop(5%)
       textLabel.pin.top(to: weightInputView.edge.bottom).marginTop(3.5%)
-      button.pin
-        .bottom(keyboardHeight ?? view.pin.safeArea.bottom)
-        .start().end().height(LargeButton.Const.height)
       updateContentSize()
+
+      let inputHeight = inputViewHeight
+      scrollView.contentInset = .bottom(inputHeight + LargeButton.Const.height)
+      let bottom = isInputViewHidden ? view.pin.safeArea.bottom : inputHeight
+      button.pin.bottom(bottom)
+        .height(LargeButton.Const.height)
+        .start().end()
     }
   }
 }

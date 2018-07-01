@@ -35,7 +35,10 @@ extension CurrentWeight {
       super.viewDidLoad()
       title = L10n.CurrentWeight.title
       imageView.image = Images.CurrentWeight.image.image
-      textLabel.text = L10n.CurrentWeight.text
+      // kg 105.5
+      // lb 220.5
+      textLabel.text = L10n.CurrentWeight.text(L10n.Common.Metrics.Weight.poundsFull,
+                                               "\(220.5) \(L10n.Common.Metrics.Weight.pounds)")
       button.action = { [weak self] in
         let viewController = TargetWeight.ViewController()
         self?.navigationController?.pushViewController(viewController, animated: true)

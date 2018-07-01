@@ -9,6 +9,7 @@
 import PinLayout
 import UIKit
 import class Utility.UI
+import KeyboardObserver
 
 enum Input { }
 
@@ -31,6 +32,15 @@ extension Input {
       $0.font = Fonts.OpenSans.regular.font(size: 26.ui)
       $0.text = L10n.GetStarted.text
     }
+    let button = LargeButton().with { $0.title = L10n.Common.Buttons.next }
+
+    // MARK: - Properties
+
+    private let keyboard = KeyboardObserver()
+
+    private(set) var isInputViewHidden = true
+    private var internalInputViewHeight: CGFloat = 0.0
+    var inputViewHeight: CGFloat { return isInputViewHidden ? 0.0 : internalInputViewHeight }
 
     // MARK: - Overrides
 
@@ -43,8 +53,13 @@ extension Input {
 
     override func loadView() {
       super.loadView()
-      view.addSubviews(backgroundView, scrollView)
+      view.addSubviews(backgroundView, scrollView, button)
       scrollView.addSubviews(imageView, textLabel)
+    }
+
+    override func viewDidLoad() {
+      super.viewDidLoad()
+      handleKeyboardEvents()
     }
 
     override func viewDidLayoutSubviews() {
@@ -58,6 +73,10 @@ extension Input {
       textLabel.pin.hCenter().maxWidth(75%)
         .top(to: imageView.edge.bottom).marginTop(7%)
         .sizeToFit(.widthFlexible)
+
+      button.pin
+        .bottom(isInputViewHidden ? view.pin.safeArea.bottom : inputViewHeight)
+        .start().end().height(LargeButton.Const.height)
       updateContentSize()
     }
 
@@ -72,6 +91,28 @@ extension Input {
       let realContentHeight = scrollView.contentSize.height
         + scrollView.contentInset.top + scrollView.contentInset.bottom
       scrollView.isScrollEnabled = realContentHeight > scrollView.bounds.size.height
+    }
+  }
+}
+
+private extension Input.ViewController {
+
+  func handleKeyboardEvents() {
+    keyboard.observe { [weak self] event -> Void in
+      guard let `self` = self else { return }
+
+      switch event.type {
+      case .willHide: self.isInputViewHidden = true
+      case .willShow: self.isInputViewHidden = false
+      default: return
+      }
+
+      let duration = event.duration
+      let options = event.options
+      self.internalInputViewHeight = event.keyboardFrameEnd.size.height
+      UIView.animate(withDuration: duration, delay: 0.0, options: options, animations: {
+        self.view.setNeedsLayout()
+      }, completion: nil)
     }
   }
 }

@@ -54,6 +54,9 @@ enum Fonts {
     static let light = FontConvertible(name: "OpenSans-Light", family: "Open Sans", path: "Fonts/OpenSans-Light.ttf")
     static let semibold = FontConvertible(name: "OpenSans-Semibold", family: "Open Sans", path: "Fonts/OpenSans-Semibold.ttf")
   }
+  enum Roboto {
+    static let regular = FontConvertible(name: "Roboto-Regular", family: "Roboto", path: "Fonts/Roboto-Regular.ttf")
+  }
 }
 // swiftlint:enable identifier_name line_length type_body_length
 

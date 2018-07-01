@@ -50,15 +50,21 @@ internal enum L10n {
       internal enum Weight {
         /// kg
         internal static let kilos = L10n.tr("Localizable", "common.metrics.weight.kilos")
+        /// kilograms
+        internal static let kilosFull = L10n.tr("Localizable", "common.metrics.weight.kilos_full")
         /// lb
         internal static let pounds = L10n.tr("Localizable", "common.metrics.weight.pounds")
+        /// pounds
+        internal static let poundsFull = L10n.tr("Localizable", "common.metrics.weight.pounds_full")
       }
     }
   }
 
   internal enum CurrentWeight {
-    /// Enter your current weight in pounds as of today, e.g 220.5
-    internal static let text = L10n.tr("Localizable", "current_weight.text")
+    /// Enter your current weight in %@ as of today, e.g %@
+    internal static func text(_ p1: String, _ p2: String) -> String {
+      return L10n.tr("Localizable", "current_weight.text", p1, p2)
+    }
     /// Current Weight
     internal static let title = L10n.tr("Localizable", "current_weight.title")
     /// Use metrics units
@@ -98,6 +104,10 @@ internal enum L10n {
   internal enum TargetDailyCalories {
     /// by
     internal static let by = L10n.tr("Localizable", "target_daily_calories.by")
+    /// A steady rate, such as losing %@, makes you more successful in the long run.
+    internal static func losingWeightText(_ p1: String) -> String {
+      return L10n.tr("Localizable", "target_daily_calories.losing_weight_text", p1)
+    }
     /// Now
     internal static let now = L10n.tr("Localizable", "target_daily_calories.now")
     /// Target Date
@@ -106,11 +116,17 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "target_daily_calories.title")
     /// Weekly Rate
     internal static let weeklyRate = L10n.tr("Localizable", "target_daily_calories.weekly_rate")
+    /// Select target date or weekly rate to calculate target daily calories. %@\n\nYou can override and customize MyNetDiary’s calculations on the detailed Plan screen in the app.
+    internal static func weightText(_ p1: String) -> String {
+      return L10n.tr("Localizable", "target_daily_calories.weight_text", p1)
+    }
   }
 
   internal enum TargetWeight {
-    /// Enter your target weight in pounds, e.g 220.5
-    internal static let text = L10n.tr("Localizable", "target_weight.text")
+    /// Enter your target weight in %@, e.g %@
+    internal static func text(_ p1: String, _ p2: String) -> String {
+      return L10n.tr("Localizable", "target_weight.text", p1, p2)
+    }
     /// Target Weight
     internal static let title = L10n.tr("Localizable", "target_weight.title")
   }

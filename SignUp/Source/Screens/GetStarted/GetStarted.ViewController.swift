@@ -40,6 +40,7 @@ extension GetStarted {
 
     override func loadView() {
       super.loadView()
+      button.isHidden = true
       view.addSubviews(healthAppDataLabel, healthAppDataSwitch,
                        adviceLabel,
                        maleButton, femaleButton)

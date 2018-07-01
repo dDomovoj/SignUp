@@ -21,7 +21,8 @@ extension TargetWeight {
       super.viewDidLoad()
       title = L10n.TargetWeight.title
       imageView.image = Images.TargetWeight.image.image
-      textLabel.text = L10n.TargetWeight.text
+      textLabel.text = L10n.TargetWeight.text(L10n.Common.Metrics.Weight.poundsFull,
+                                              "\(220.5) \(L10n.Common.Metrics.Weight.pounds)")
       button.action = { [weak self] in
         let viewController = YourHeight.ViewController()
         self?.navigationController?.pushViewController(viewController, animated: true)

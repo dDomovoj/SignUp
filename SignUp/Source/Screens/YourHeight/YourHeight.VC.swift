@@ -16,7 +16,6 @@ extension YourHeight {
 
   class ViewController: Input.ViewController {
 
-    let button = LargeButton().with { $0.title = L10n.Common.Buttons.next }
     let inputLabel = Label().with {
       $0.textAlignment = .center
       $0.textColor = Colors.black
@@ -33,7 +32,7 @@ extension YourHeight {
     override func loadView() {
       super.loadView()
       scrollView.addSubview(inputLabel)
-      view.addSubviews(pickerView, button)
+      view.addSubviews(pickerView)
     }
 
     override func viewDidLoad() {
