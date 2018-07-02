@@ -21,7 +21,7 @@ extension Welcome {
     typealias Cell = Welcome.PageCell
     typealias Data = Cell.Data
 
-    let pages = Page.all()
+    let viewModel = Welcome.ViewModel()
     let pagingController = PagingController<Cell>()
 
     // MARK: - UI
@@ -70,18 +70,11 @@ extension Welcome {
 
     override func viewDidLoad() {
       super.viewDidLoad()
-      pagingController.source.items = pages.map { .init(imageUrl: $0.imageUrl) }
+      pagingController.source.items = viewModel.pages.map { .init(imageUrl: $0.imageUrl) }
       pagingController.didChangeSelectedIndex = { [weak self] in
-        self?.updatePageData(at: $0)
+        self?.showPageData(at: $0)
       }
-      signInButton.action = { [weak self] in
-        let viewController = WIP.ViewController().with { $0.title = L10n.SignIn.title }
-        self?.navigationController?.pushViewController(viewController, animated: true)
-      }
-      signUpButton.action = { [weak self] in
-        let viewController = GetStarted.ViewController()
-        self?.navigationController?.pushViewController(viewController, animated: true)
-      }
+      setupActions()
     }
 
     // MARK: - Layout
@@ -132,10 +125,21 @@ private extension Welcome.ViewController {
     view.addSubview(pageControl)
     view.addSubviews(pageTitleLabel, pageTextLabel)
     view.addSubviews(signUpButton, signInButton)
-    pageControl.addTarget(self, action: #selector(pageControlValueChanged(_:)), for: .valueChanged)
   }
 
-  // MARK: Action
+  // MARK: Actions
+
+  func setupActions() {
+    signInButton.action = { [weak self] in
+      let viewController = WIP.ViewController().with { $0.title = L10n.SignIn.title }
+      self?.navigationController?.pushViewController(viewController, animated: true)
+    }
+    signUpButton.action = { [weak self] in
+      let viewController = GetStarted.ViewController()
+      self?.navigationController?.pushViewController(viewController, animated: true)
+    }
+    pageControl.addTarget(self, action: #selector(pageControlValueChanged(_:)), for: .valueChanged)
+  }
 
   @objc func pageControlValueChanged(_ sender: Any?) {
     guard let pageControl = sender as? UIPageControl, pageControl == self.pageControl else {
@@ -147,12 +151,12 @@ private extension Welcome.ViewController {
 
   // MARK: Update
 
-  func updatePageData(at index: Int) {
-    guard let page = pages[safe: index] else {
+  func showPageData(at index: Int) {
+    guard let page = viewModel.pages[safe: index] else {
       return
     }
 
-    pageControl.numberOfPages = pages.count
+    pageControl.numberOfPages = viewModel.pages.count
     pageControl.currentPage = index
     update(title: page.title, with: page.highlight)
     update(text: page.text)

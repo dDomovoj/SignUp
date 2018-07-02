@@ -1,5 +1,5 @@
 //
-//  Welcom.DataProvider.swift
+//  Welcom.Page.swift
 //  SignUp
 //
 //  Created by Dmitry Duleba on 6/26/18.
@@ -11,16 +11,22 @@ import UIKit
 
 extension Welcome {
 
+  class ViewModel {
+
+    let pages: [Page] = [.welcome, .planGoals, .trackFood, .getMotivated, .beHealthy]
+  }
+}
+
+// MARK: - Page
+
+extension Welcome {
+
   enum Page: Int {
     case welcome = 0
     case planGoals
     case trackFood
     case getMotivated
     case beHealthy
-
-    static func all() -> [Welcome.Page] {
-      return [.welcome, .planGoals, .trackFood, .getMotivated, .beHealthy]
-    }
 
     var title: String {
       switch self {
