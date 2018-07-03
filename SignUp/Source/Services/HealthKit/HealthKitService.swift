@@ -10,6 +10,8 @@ import Foundation
 import HealthKit
 import struct UIKit.CGFloat
 
+private typealias AuthToken = String
+
 // MARK: Result
 
 extension HealthKitService {
@@ -26,8 +28,8 @@ extension HealthKitService {
     case notAvailableOnDevice
     case notAuthorized
     case dataTypeNotAvailable(String)
+    case updateNotAvailable(String)
     case unknown
-    case updateNotAvailabel(String)
   }
 }
 
@@ -61,6 +63,7 @@ final class HealthKitService {
   private let healthStore = HKHealthStore()
 
   var syncPolicy: SyncPolicy { return .readonly }
+
   var loggingPolicy: LoggingPolicy { return .all }
 
   var fetchedCharacteristicTypes: [HKCharacteristicTypeIdentifier] {
@@ -70,6 +73,8 @@ final class HealthKitService {
   var fetchedQuantityTypes: [HKQuantityTypeIdentifier] {
     return [.height, .bodyMass]
   }
+
+  private var authChecksum: Int = 0
 
   // MARK: - Init
 
@@ -104,15 +109,22 @@ final class HealthKitService {
       return
     }
 
-    let authCompletion: (Bool, Swift.Error?) -> Void = { success, error in
+    let objectTypes: [HKObjectType] = characteristicTypes as [HKObjectType] + quantityTypes as [HKObjectType]
+    let checksum = objectTypes.map { $0.hashValue } .reduce(0) { $0 ^ $1 }
+    if checksum == authChecksum {
+      completion(.succeeded)
+      return
+    }
+
+    let authCompletion: (Bool, Swift.Error?) -> Void = { [weak self] success, error in
       guard success else {
         completion(.failed(error ?? Error.unknown))
         return
       }
+      self?.authChecksum = checksum
       completion(.succeeded)
     }
 
-    let objectTypes: [HKObjectType] = characteristicTypes as [HKObjectType] + quantityTypes as [HKObjectType]
     let values = Set(objectTypes)
     switch syncPolicy {
     case .readonly:
@@ -127,29 +139,42 @@ final class HealthKitService {
   // MARK: - Accessors
 
   // MARK: Gender
-  var gender: Gender? {
-    get { return (try? healthStore.biologicalSex())?.biologicalSex.genderValue }
+  var gender: UserProfile.Gender? {
+    get {
+      do {
+        return try healthStore.biologicalSex().biologicalSex.genderValue
+      } catch {
+        logIfNeeded(.failed(error))
+        return nil
+      }
+    }
     set {
       guard shouldSave else { return }
 
-      logIfNeeded(.failed(Error.updateNotAvailabel("\(#function)")))
+      logIfNeeded(.failed(Error.updateNotAvailable("\(#function)")))
     }
   }
 
   // MARK: DoB
   var dateOfBirth: Date? {
     get {
-      if #available(iOS 10.0, *) {
-        return (try? healthStore.dateOfBirthComponents())
-          .map { Calendar.current.date(from: $0) } ?? nil
-      } else {
-        return try? healthStore.dateOfBirth()
+      do {
+        if #available(iOS 10.0, *) {
+          let components = try healthStore.dateOfBirthComponents()
+          let date = Calendar.current.date(from: components)
+          return date
+        } else {
+          return try healthStore.dateOfBirth()
+        }
+      } catch {
+        logIfNeeded(.failed(error))
+        return nil
       }
     }
     set {
       guard shouldSave else { return }
 
-      logIfNeeded(.failed(Error.updateNotAvailabel("\(#function)")))
+      logIfNeeded(.failed(Error.updateNotAvailable("\(#function)")))
     }
   }
 
@@ -268,7 +293,7 @@ private extension HealthKitService {
 
 fileprivate extension HKBiologicalSex {
 
-  var genderValue: Gender? {
+  var genderValue: UserProfile.Gender? {
     switch self {
     case .female: return .female
     case .male: return .male

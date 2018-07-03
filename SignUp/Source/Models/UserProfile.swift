@@ -9,15 +9,29 @@
 import Foundation
 import struct UIKit.CGFloat
 
-enum Gender {
-  case male
-  case female
+struct UserProfile: Codable {
+
+  enum Defaults {
+    static let height: CGFloat = 6.0 * .foot
+    static let bodyMass: CGFloat = 160.0 * .pound
+    static let dateOfBirth = Date(timeIntervalSince1970: -365 * .day)
+  }
+
+  var gender = Gender.male
+  var height = Defaults.height
+  var bodyMass = Defaults.bodyMass
+  var dateOfBirth = Defaults.dateOfBirth
+
+  var metrics = Metrics.metric
+  var isSyncedWithHealthKit = false
 }
 
-struct UserProfile {
+// MARK: - Gender
 
-  var gender: Gender = .male
-  var height: CGFloat = 6.0 * .foot
-  var weight: CGFloat = 160.0 * .pound
-  var dateOfBirth: Date = Date(timeIntervalSince1970: -365 * .day)
+extension UserProfile {
+
+  enum Gender: String, Codable {
+    case male
+    case female
+  }
 }

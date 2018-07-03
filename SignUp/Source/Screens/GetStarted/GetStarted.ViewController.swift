@@ -36,6 +36,10 @@ extension GetStarted {
     let maleButton = SmallButton().with { $0.title = L10n.GetStarted.Buttons.male }
     let femaleButton = SmallButton().with { $0.title = L10n.GetStarted.Buttons.female }
 
+    // MARK: - Properties
+
+    let viewModel = ViewModel()
+
     // MARK: - Lifecycle
 
     override func loadView() {
@@ -51,11 +55,7 @@ extension GetStarted {
       title = L10n.GetStarted.title
       imageView.image = Images.GetStarted.image.image
       textLabel.text = L10n.GetStarted.text
-      maleButton.action = { [weak self] in
-        let viewController = CurrentWeight.ViewController()
-        self?.navigationController?.pushViewController(viewController, animated: true)
-      }
-      femaleButton.action = maleButton.action
+      setupActions()
     }
 
     override func viewDidLayoutSubviews() {
@@ -84,6 +84,44 @@ extension GetStarted {
         .marginEnd(40.ui)
         .start(140.ui)
         .sizeToFit(.widthFlexible)
+    }
+  }
+}
+
+// MARK: - Private
+
+private extension GetStarted.ViewController {
+
+  // MARK: Actions
+
+  func setupActions() {
+    healthAppDataSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
+    maleButton.action = { [weak self] in
+      self?.viewModel.setUserGender(.male)
+      self?.showCurrentWeight()
+    }
+    femaleButton.action = { [weak self] in
+      self?.viewModel.setUserGender(.female)
+      self?.showCurrentWeight()
+    }
+  }
+
+  @objc func switchValueChanged(_ sender: UISwitch) {
+    if sender == healthAppDataSwitch {
+      viewModel.shouldUseHealthKitData = healthAppDataSwitch.isOn
+    }
+  }
+
+  // MARK: - Routing
+
+  func showCurrentWeight() {
+    // TODO: exclusive entrance
+    viewModel.syncData { [weak self] in
+      guard let `self` = self else { return }
+
+      let profile = self.viewModel.userProfile
+      let viewController = CurrentWeight.ViewController(userProfile: profile)
+      self.navigationController?.pushViewController(viewController, animated: true)
     }
   }
 }

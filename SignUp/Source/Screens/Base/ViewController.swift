@@ -78,4 +78,12 @@ class ViewController: UIViewController {
 
   // MARK: - Public
 
+  func showAlert(title: String, message: String) {
+    let alert = UIAlertController(title: title,
+                                  message: message,
+                                  preferredStyle: .alert)
+    alert.addAction(UIAlertAction.init(title: L10n.Alerts.Buttons.ok.uppercased(), style: .default, handler: nil))
+    alert.view.tintColor = Colors.green
+    present(alert, animated: true)
+  }
 }

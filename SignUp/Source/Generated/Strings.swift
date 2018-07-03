@@ -16,9 +16,18 @@ internal enum L10n {
       /// OK
       internal static let ok = L10n.tr("Localizable", "alerts.buttons.ok")
     }
+
+    internal enum Titles {
+      /// Congratulations!
+      internal static let congratulations = L10n.tr("Localizable", "alerts.titles.congratulations")
+      /// Error!
+      internal static let error = L10n.tr("Localizable", "alerts.titles.error")
+    }
   }
 
   internal enum Common {
+    /// \nYou've done setting up MyNetDiary
+    internal static let finishText = L10n.tr("Localizable", "common.finish_text")
 
     internal enum Buttons {
       /// Finish
@@ -76,6 +85,13 @@ internal enum L10n {
     internal static let text = L10n.tr("Localizable", "date_of_birth.text")
     /// Date of Birth
     internal static let title = L10n.tr("Localizable", "date_of_birth.title")
+  }
+
+  internal enum Error {
+    /// Entered weight is too heavy
+    internal static let tooHeavyWeight = L10n.tr("Localizable", "error.too_heavy_weight")
+    /// Entered weight is too light
+    internal static let tooLightWeight = L10n.tr("Localizable", "error.too_light_weight")
   }
 
   internal enum GetStarted {

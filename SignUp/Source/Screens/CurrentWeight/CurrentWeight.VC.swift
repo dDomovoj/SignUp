@@ -17,6 +17,8 @@ extension CurrentWeight {
 
   class ViewController: WeightInput.ViewController {
 
+    // MARK: - UI
+
     let metricsUnitsLabel = Label().with {
       $0.textColor = Colors.black
       $0.numberOfLines = 1
@@ -25,6 +27,23 @@ extension CurrentWeight {
       $0.text = L10n.CurrentWeight.useMetricsUnits
     }
     let metricsUnitsSwitch = UISwitch().with { $0.onTintColor = Colors.green }
+
+    // MARK: - Properties
+
+    let viewModel: ViewModel
+
+    // MARK: - Init
+
+    required init(userProfile: UserProfile) {
+      viewModel = .init(userProfile: userProfile)
+      super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Lifecycle
 
     override func loadView() {
       super.loadView()
@@ -35,14 +54,14 @@ extension CurrentWeight {
       super.viewDidLoad()
       title = L10n.CurrentWeight.title
       imageView.image = Images.CurrentWeight.image.image
-      // kg 105.5
-      // lb 220.5
-      textLabel.text = L10n.CurrentWeight.text(L10n.Common.Metrics.Weight.poundsFull,
-                                               "\(220.5) \(L10n.Common.Metrics.Weight.pounds)")
-      button.action = { [weak self] in
-        let viewController = TargetWeight.ViewController()
-        self?.navigationController?.pushViewController(viewController, animated: true)
+      metricsUnitsSwitch.isOn = viewModel.metrics == .metric
+      viewModel.metricsDidChange = { [weak self] in
+        self?.metricsDidChange(metrics: $0)
       }
+      weightInputView.valueDidChange = { [weak self] in
+        self?.valueDidChange(weight: $0)
+      }
+      setupActions()
     }
 
     override func viewDidLayoutSubviews() {
@@ -56,6 +75,58 @@ extension CurrentWeight {
         .start(140.ui)
         .sizeToFit(.widthFlexible)
       updateContentSize()
+    }
+  }
+}
+
+// MARK: - Private
+
+private extension CurrentWeight.ViewController {
+
+  // MARK: Actions
+
+  func setupActions() {
+    button.action = { [weak self] in
+      self?.showTargetWeight()
+    }
+    metricsUnitsSwitch.addTarget(self, action: #selector(switchDidChangeValue(_:)), for: .valueChanged)
+  }
+
+  @objc func switchDidChangeValue(_ sender: UISwitch) {
+    if sender == metricsUnitsSwitch {
+      viewModel.metrics = sender.isOn ? .metric : .imperial
+    }
+  }
+
+  // MARK: Bindings
+
+  // Hot
+  func metricsDidChange(metrics: Metrics) {
+    let amount = viewModel.hintCurrentWeight()
+    let unit = viewModel.hintCurrentUnit()
+    weightInputView.unitString = unit
+    weightInputView.setValue(viewModel.userProfile.bodyMass.asWeight(from: .metric, to: metrics))
+
+    textLabel.text = L10n.CurrentWeight.text(L10n.Common.Metrics.Weight.poundsFull, "\(amount) \(unit)")
+    view.setNeedsLayout()
+  }
+
+  // Cold
+  func valueDidChange(weight: CGFloat) {
+    viewModel.updateWeight(weight)
+  }
+
+  // MARK: - Routing
+
+  func showTargetWeight() {
+    viewModel.syncData { [weak self] error in
+      if let error = error {
+        self?.showAlert(title: L10n.Alerts.Titles.error, message: error.localizedDescription)
+        return
+      }
+
+      let viewController = TargetWeight.ViewController()
+      self?.navigationController?.pushViewController(viewController, animated: true)
     }
   }
 }

@@ -24,18 +24,20 @@ class NumericInputView: View {
 
   // MARK: - Properties
 
-//  private let numberFormatter = NumberFormatter().with {
-//    $0.allowsFloats = true
-//    $0.format = .decimal
-//    $0.decimalSeparator = "."
-//    $0.generatesDecimalNumbers = true
-//    $0.maximumFractionDigits = 3
-//  }
+  var unitString: String? { didSet { updateDisplayText() } }
+  var valueDidChange: ((CGFloat) -> Void)?
 
-  var metricsString: String? = "lb" { didSet { update() } }
   private let decimalSeparator = "."
-  private var value: CGFloat = 0.0 { didSet { update() } }
-  private var inputText = ""
+  private(set) var value: CGFloat = 0.0
+  private var inputText = "" { didSet { updateValue() } }
+
+  private let numberFormatter = NumberFormatter().with {
+    $0.allowsFloats = true
+    $0.format = .decimal
+    $0.decimalSeparator = "."
+    $0.generatesDecimalNumbers = true
+    $0.maximumFractionDigits = 3
+  }
 
   // MARK: - Overrides
 
@@ -56,7 +58,7 @@ class NumericInputView: View {
 
   override func didMoveToSuperview() {
     super.didMoveToSuperview()
-    update()
+    updateDisplayText()
   }
 
   override func layoutSubviews() {
@@ -64,15 +66,37 @@ class NumericInputView: View {
     label.pin.all()
     underlineView.pin.start().end().bottom().height(2.ui)
   }
+
+  // MARK: - Public
+
+  func setValue(_ value: CGFloat) {
+    inputText = value.formatted(".1")
+    self.value = value
+    updateDisplayText()
+  }
 }
+
+// MARK: - Private
 
 private extension NumericInputView {
 
-  func update() {
+  func updateDisplayText() {
     guard superview != nil else { return }
 
     label.text = displayText()
     setNeedsLayout()
+  }
+
+  func updateValue() {
+    guard let doubleValue = numberFormatter.number(from: inputText)?.doubleValue else {
+      return
+    }
+
+    let new = CGFloat(doubleValue)
+    if value == new { return }
+
+    value = new
+    valueDidChange?(new)
   }
 }
 
@@ -88,14 +112,14 @@ extension NumericInputView: UIKeyInput {
     if text == decimalSeparator && inputText.contains(decimalSeparator) { return }
 
     inputText.append(text)
-    update()
+    updateDisplayText()
   }
 
   func deleteBackward() {
     guard !inputText.isEmpty else { return }
 
     _ = inputText.removeLast()
-    update()
+    updateDisplayText()
   }
 
   @objc dynamic var keyboardType: UIKeyboardType {
@@ -116,7 +140,7 @@ private extension NumericInputView {
   }
 
   func displayText() -> String? {
-    let suffix = metricsString.map { " \($0)" } ?? ""
+    let suffix = unitString.map { " \($0)" } ?? ""
     if inputText.length == 0 {
       return "0" + decimalSeparator + "0" + suffix
     }

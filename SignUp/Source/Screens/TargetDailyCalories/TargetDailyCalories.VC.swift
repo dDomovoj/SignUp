@@ -101,12 +101,7 @@ extension TargetDailyCalories {
         self?.weeklyRateView.value = $0.first
       }
       finishButton.action = { [weak self] in
-        let alert = UIAlertController(title: "Congratulations!",
-                                      message: "\nYou've done setting up MyNetDiary",
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))
-        alert.view.tintColor = Colors.green
-        self?.present(alert, animated: true)
+        self?.showAlert(title: L10n.Alerts.Titles.congratulations, message: L10n.Common.finishText)
       }
       hideButton.action = { [weak self] in
         self?.view.endEditing(true)

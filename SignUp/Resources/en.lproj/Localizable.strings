@@ -1,8 +1,11 @@
+"alerts.titles.congratulations" = "Congratulations!";
+"alerts.titles.error" = "Error!";
 "alerts.buttons.ok" = "OK";
 "alerts.buttons.cancel" = "Cancel";
 "common.buttons.next" = "Next";
 "common.buttons.finish" = "Finish";
 "common.buttons.hide" = "Hide";
+"common.finish_text" = "\nYou've done setting up MyNetDiary";
 "common.metrics.weight.pounds" = "lb";
 "common.metrics.weight.pounds_full" = "pounds";
 "common.metrics.weight.kilos" = "kg";
@@ -17,6 +20,8 @@
 "current_weight.use_metrics_units" = "Use metrics units";
 "date_of_birth.title" = "Date of Birth";
 "date_of_birth.text" = "Enter your date of birth. It will be used to calculate your age.";
+"error.too_heavy_weight" = "Entered weight is too heavy";
+"error.too_light_weight" = "Entered weight is too light";
 "get_started.title" = "Get Started";
 "get_started.text" = "Enter your gender, it’s important for\ncalories calculation - female bodies\nneed fewer calories";
 "get_started.health_app_data_usage" = "Use Health App data";
