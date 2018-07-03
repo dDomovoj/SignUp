@@ -21,6 +21,8 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>$(PRODUCT_NAME) uses HealthKit to access to your gender, height, weight and age.</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>

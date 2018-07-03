@@ -26,6 +26,8 @@
 		5C1EF78C20E16FB4000C7213 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1EF78B20E16FB4000C7213 /* View.swift */; };
 		5C1EF78E20E16FBB000C7213 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1EF78D20E16FBB000C7213 /* Label.swift */; };
 		5C1EF79020E16FC2000C7213 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1EF78F20E16FC2000C7213 /* ImageView.swift */; };
+		5C25B11F20EA1A8100CE0612 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C25B11E20EA1A8100CE0612 /* HealthKit.framework */; };
+		5C25B12120EA1B8200CE0612 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C25B12020EA1B8200CE0612 /* HealthKitService.swift */; };
 		5C3870E920E557B00035634E /* CurrentWeight.VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3870E820E557B00035634E /* CurrentWeight.VC.swift */; };
 		5C3870EB20E55EE80035634E /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3870EA20E55EE80035634E /* LargeButton.swift */; };
 		5C3870ED20E560CD0035634E /* TargetWeight.VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3870EC20E560CD0035634E /* TargetWeight.VC.swift */; };
@@ -34,6 +36,8 @@
 		5C3870F320E562890035634E /* TargetDailyCalories.VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3870F220E562890035634E /* TargetDailyCalories.VC.swift */; };
 		5C3870F520E567170035634E /* HideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3870F420E567170035634E /* HideButton.swift */; };
 		5C3870F720E568DC0035634E /* NumericInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3870F620E568DC0035634E /* NumericInputView.swift */; };
+		5C3DDEC720EA273200360B7B /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3DDEC620EA273200360B7B /* UserProfile.swift */; };
+		5C3DDEC920EA29A000360B7B /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3DDEC820EA29A000360B7B /* Metrics.swift */; };
 		5C549A6720E2A63B0053D3FF /* PagingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C549A6620E2A63B0053D3FF /* PagingCell.swift */; };
 		5C549A6920E2A8740053D3FF /* PagingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C549A6820E2A8740053D3FF /* PagingSource.swift */; };
 		5C549A6D20E2AC980053D3FF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C549A6C20E2AC980053D3FF /* Cell.swift */; };
@@ -79,6 +83,9 @@
 		5C1EF78B20E16FB4000C7213 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		5C1EF78D20E16FBB000C7213 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		5C1EF78F20E16FC2000C7213 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		5C25B11D20EA1A8100CE0612 /* SignUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SignUp.entitlements; sourceTree = "<group>"; };
+		5C25B11E20EA1A8100CE0612 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		5C25B12020EA1B8200CE0612 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
 		5C3870E820E557B00035634E /* CurrentWeight.VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeight.VC.swift; sourceTree = "<group>"; };
 		5C3870EA20E55EE80035634E /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
 		5C3870EC20E560CD0035634E /* TargetWeight.VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetWeight.VC.swift; sourceTree = "<group>"; };
@@ -87,6 +94,8 @@
 		5C3870F220E562890035634E /* TargetDailyCalories.VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetDailyCalories.VC.swift; sourceTree = "<group>"; };
 		5C3870F420E567170035634E /* HideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideButton.swift; sourceTree = "<group>"; };
 		5C3870F620E568DC0035634E /* NumericInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericInputView.swift; sourceTree = "<group>"; };
+		5C3DDEC620EA273200360B7B /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		5C3DDEC820EA29A000360B7B /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		5C549A6620E2A63B0053D3FF /* PagingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCell.swift; sourceTree = "<group>"; };
 		5C549A6820E2A8740053D3FF /* PagingSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingSource.swift; sourceTree = "<group>"; };
 		5C549A6C20E2AC980053D3FF /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -120,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				181F35FCD9187419449F44B0 /* Pods_SignUp.framework in Frameworks */,
+				5C25B11F20EA1A8100CE0612 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +139,7 @@
 		5C10390620DEA494009EE56A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5C3DDEC520EA272600360B7B /* Models */,
 				5C10390920DEA4A9009EE56A /* AppDelegate */,
 				5CE8592D20E2D543001AC332 /* Extensions */,
 				5C10390A20DEA4BB009EE56A /* Generated */,
@@ -160,6 +171,7 @@
 		5C10390820DEA4A2009EE56A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5C25B12220EA1B8600CE0612 /* HealthKit */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -292,6 +304,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5C25B12220EA1B8600CE0612 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				5C25B12020EA1B8200CE0612 /* HealthKitService.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		5C3DDEC520EA272600360B7B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C3DDEC620EA273200360B7B /* UserProfile.swift */,
+				5C3DDEC820EA29A000360B7B /* Metrics.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5C549A6E20E2ACC50053D3FF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +359,7 @@
 		5CA985BD20DE9D8C00ED937E /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				5C25B11D20EA1A8100CE0612 /* SignUp.entitlements */,
 				5C10390B20DEA4C1009EE56A /* Resources */,
 				5C10390620DEA494009EE56A /* Source */,
 			);
@@ -395,6 +425,7 @@
 		D1E7176AAF0D3403556BAFD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5C25B11E20EA1A8100CE0612 /* HealthKit.framework */,
 				C7E250A4B6BC9B2D440694D0 /* Pods_SignUp.framework */,
 			);
 			name = Frameworks;
@@ -444,6 +475,11 @@
 				TargetAttributes = {
 					5CA985BA20DE9D8C00ED937E = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -551,6 +587,7 @@
 			files = (
 				5C1EF79020E16FC2000C7213 /* ImageView.swift in Sources */,
 				5CF0AAE220E41224009C5F36 /* UI.Const.swift in Sources */,
+				5C3DDEC720EA273200360B7B /* UserProfile.swift in Sources */,
 				5C8E676B20E8E82000D1755B /* YourHeight.Source.swift in Sources */,
 				5C3870F520E567170035634E /* HideButton.swift in Sources */,
 				5C8E676920E8E65800D1755B /* PickerSource.swift in Sources */,
@@ -571,6 +608,7 @@
 				5C1EF78E20E16FBB000C7213 /* Label.swift in Sources */,
 				5C10392320DEA6D0009EE56A /* Colors.swift in Sources */,
 				5C1E98F820E930360081B04F /* TargetDailyCalories.Source.swift in Sources */,
+				5C25B12120EA1B8200CE0612 /* HealthKitService.swift in Sources */,
 				5C3870ED20E560CD0035634E /* TargetWeight.VC.swift in Sources */,
 				5C3870EF20E5613C0035634E /* YourHeight.VC.swift in Sources */,
 				5C193E7520E91ABA00AFE122 /* GenericInputView.swift in Sources */,
@@ -588,6 +626,7 @@
 				5C549A7220E2ADC30053D3FF /* Welcome.PageCell.swift in Sources */,
 				5C3870F720E568DC0035634E /* NumericInputView.swift in Sources */,
 				5C1EF78920E16C9F000C7213 /* Welcome.ViewController.swift in Sources */,
+				5C3DDEC920EA29A000360B7B /* Metrics.swift in Sources */,
 				5C3870E920E557B00035634E /* CurrentWeight.VC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -733,6 +772,7 @@
 			baseConfigurationReference = A4BDBD58347174104067F1E9 /* Pods-SignUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SignUp/SignUp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYD77KWJVN;
 				INFOPLIST_FILE = "$(SRCROOT)/SignUp/Resources/Info.plist";
@@ -754,6 +794,7 @@
 			baseConfigurationReference = 15C3C6C5FD25A7A7FD29E242 /* Pods-SignUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SignUp/SignUp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYD77KWJVN;
 				INFOPLIST_FILE = "$(SRCROOT)/SignUp/Resources/Info.plist";
