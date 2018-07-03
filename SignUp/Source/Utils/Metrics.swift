@@ -76,4 +76,5 @@ extension TimeInterval {
   static let hour: TimeInterval = .minute * 60
   static let day: TimeInterval = .hour * 24
   static let week: TimeInterval = .day * 7
+  static let year: TimeInterval = .day * 365
 }

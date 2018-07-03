@@ -14,7 +14,8 @@ struct UserProfile: Codable {
   enum Defaults {
     static let height: CGFloat = 6.0 * .foot
     static let bodyMass: CGFloat = 160.0 * .pound
-    static let dateOfBirth = Date(timeIntervalSince1970: -365 * .day)
+    static let dateOfBirth = Calendar.current.date(byAdding: .year, value: -35, to: Date())
+      ?? Date().addingTimeInterval(-35 * .year)
   }
 
   var gender = Gender.male

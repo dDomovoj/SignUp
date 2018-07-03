@@ -60,6 +60,7 @@
 		5CBB180820E17A0D00111110 /* PagingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB180720E17A0D00111110 /* PagingController.swift */; };
 		5CCF328520EC22BB00212556 /* UserTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF328420EC22BB00212556 /* UserTarget.swift */; };
 		5CCF328720EC378200212556 /* DateOfBirth.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF328620EC378200212556 /* DateOfBirth.ViewModel.swift */; };
+		5CCF328920EC3D0C00212556 /* TargetDailyCaloies.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF328820EC3D0C00212556 /* TargetDailyCaloies.ViewModel.swift */; };
 		5CE8592F20E2D552001AC332 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8592E20E2D552001AC332 /* String+Extensions.swift */; };
 		5CE8593220E2D8BF001AC332 /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8593120E2D8BF001AC332 /* SmallButton.swift */; };
 		5CE8593420E2D91D001AC332 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8593320E2D91D001AC332 /* UIImage+Extensions.swift */; };
@@ -126,6 +127,7 @@
 		5CBB180720E17A0D00111110 /* PagingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingController.swift; sourceTree = "<group>"; };
 		5CCF328420EC22BB00212556 /* UserTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTarget.swift; sourceTree = "<group>"; };
 		5CCF328620EC378200212556 /* DateOfBirth.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfBirth.ViewModel.swift; sourceTree = "<group>"; };
+		5CCF328820EC3D0C00212556 /* TargetDailyCaloies.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetDailyCaloies.ViewModel.swift; sourceTree = "<group>"; };
 		5CE8592E20E2D552001AC332 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		5CE8593120E2D8BF001AC332 /* SmallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
 		5CE8593320E2D91D001AC332 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				5C3870F220E562890035634E /* TargetDailyCalories.VC.swift */,
+				5CCF328820EC3D0C00212556 /* TargetDailyCaloies.ViewModel.swift */,
 				5C1E98F720E930360081B04F /* TargetDailyCalories.Source.swift */,
 			);
 			path = TargetDailyCalories;
@@ -334,6 +337,7 @@
 		5C3DDEC520EA272600360B7B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5C3DDECE20EC1C1E00360B7B /* Error.swift */,
 				5C3DDEC620EA273200360B7B /* UserProfile.swift */,
 				5CCF328420EC22BB00212556 /* UserTarget.swift */,
 			);
@@ -427,7 +431,6 @@
 		5CF0AAE020E41212009C5F36 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5C3DDECE20EC1C1E00360B7B /* Error.swift */,
 				5C3DDEC820EA29A000360B7B /* Metrics.swift */,
 				5CF0AAE120E41224009C5F36 /* UI.Const.swift */,
 			);
@@ -640,6 +643,7 @@
 				5C193E7520E91ABA00AFE122 /* GenericInputView.swift in Sources */,
 				5C10392220DEA6D0009EE56A /* Images.swift in Sources */,
 				5C10392120DEA6D0009EE56A /* Strings.swift in Sources */,
+				5CCF328920EC3D0C00212556 /* TargetDailyCaloies.ViewModel.swift in Sources */,
 				5CF0AADD20E4078B009C5F36 /* WIP.VC.swift in Sources */,
 				5C3DDECB20EBA17F00360B7B /* GetStarted.ViewModel.swift in Sources */,
 				5CF0AADF20E40EEB009C5F36 /* BackgroundView.swift in Sources */,

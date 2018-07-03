@@ -9,11 +9,12 @@
 import Foundation
 
 enum Error: Swift.Error {
+  
   case tooLightWeight
   case tooHeavyWeight
   case tooLowHeight
   case tooHighHeight
-  
+
   var localizedDescription: String {
     switch self {
     case .tooHeavyWeight: return L10n.Error.tooHeavyWeight

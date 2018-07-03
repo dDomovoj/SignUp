@@ -32,11 +32,6 @@ extension DateOfBirth {
 
     // MARK: - Properties
 
-    var date: Date = {
-      let minAge: TimeInterval = 13 * 365 * 24 * 60 * 60
-      return Date().addingTimeInterval(-minAge)
-    }()
-
     let viewModel: ViewModel
 
     // MARK: - Init
@@ -63,15 +58,11 @@ extension DateOfBirth {
       title = L10n.DateOfBirth.title
       imageView.image = Images.DateOfBirth.image.image
       textLabel.text = L10n.DateOfBirth.text
-      button.action = { [weak self] in
-        let viewController = TargetDailyCalories.ViewController()
-        self?.navigationController?.pushViewController(viewController, animated: true)
-      }
-
-      datePickerView.maximumDate = date
-      datePickerView.date = date
-      datePickerView.addTarget(self, action: #selector(dateDidChange(_:)), for: .valueChanged)
+      datePickerView.maximumDate = viewModel.maximumDate
+      datePickerView.minimumDate = viewModel.minimumDate
+      datePickerView.date = viewModel.date
       updateDateLabel()
+      setupActions()
     }
 
     override func viewDidLayoutSubviews() {
@@ -101,17 +92,38 @@ private extension DateOfBirth.ViewController {
       .sizeToFit(.widthFlexible)
   }
 
-  @objc func dateDidChange(_ sender: UIDatePicker) {
-    date = sender.date
-    updateDateLabel()
-  }
-
   func updateDateLabel() {
     let locale = Locale.current
     let formatTemplate = "MMM dd yyyy"
     let format = DateFormatter.dateFormat(fromTemplate: formatTemplate, options: 0, locale: locale) ?? formatTemplate
     let formatter = FormatterPool.formatter(DateFormatter.self, format: format, locale: locale)
-    inputLabel.text = formatter.string(from: date)
+    inputLabel.text = formatter.string(from: viewModel.date)
     layoutLabels()
+  }
+
+  // MARK: - Actions
+
+  func setupActions() {
+    datePickerView.addTarget(self, action: #selector(dateDidChange(_:)), for: .valueChanged)
+    button.action = { [weak self] in
+      self?.showTargetDailyCalories()
+    }
+  }
+
+  @objc func dateDidChange(_ sender: UIDatePicker) {
+    viewModel.update(dateOfBirth: sender.date)
+    updateDateLabel()
+  }
+
+  // MARK: - Routing
+
+  func showTargetDailyCalories() {
+    viewModel.syncData { [weak self] in
+      guard let `self` = self else { return }
+
+      let viewController = TargetDailyCalories.ViewController(userProfile: self.viewModel.userProfile,
+                                                              userTarget: self.viewModel.userTarget)
+      self.navigationController?.pushViewController(viewController, animated: true)
+    }
   }
 }
