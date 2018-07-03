@@ -41,6 +41,7 @@
 		5C3DDECB20EBA17F00360B7B /* GetStarted.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3DDECA20EBA17F00360B7B /* GetStarted.ViewModel.swift */; };
 		5C3DDECD20EC032A00360B7B /* CurrentWeight.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3DDECC20EC032A00360B7B /* CurrentWeight.ViewModel.swift */; };
 		5C3DDECF20EC1C1E00360B7B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3DDECE20EC1C1E00360B7B /* Error.swift */; };
+		5C3DDED120EC1D7500360B7B /* TargetWeight.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3DDED020EC1D7500360B7B /* TargetWeight.ViewModel.swift */; };
 		5C549A6720E2A63B0053D3FF /* PagingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C549A6620E2A63B0053D3FF /* PagingCell.swift */; };
 		5C549A6920E2A8740053D3FF /* PagingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C549A6820E2A8740053D3FF /* PagingSource.swift */; };
 		5C549A6D20E2AC980053D3FF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C549A6C20E2AC980053D3FF /* Cell.swift */; };
@@ -102,6 +103,7 @@
 		5C3DDECA20EBA17F00360B7B /* GetStarted.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStarted.ViewModel.swift; sourceTree = "<group>"; };
 		5C3DDECC20EC032A00360B7B /* CurrentWeight.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeight.ViewModel.swift; sourceTree = "<group>"; };
 		5C3DDECE20EC1C1E00360B7B /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		5C3DDED020EC1D7500360B7B /* TargetWeight.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetWeight.ViewModel.swift; sourceTree = "<group>"; };
 		5C549A6620E2A63B0053D3FF /* PagingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCell.swift; sourceTree = "<group>"; };
 		5C549A6820E2A8740053D3FF /* PagingSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingSource.swift; sourceTree = "<group>"; };
 		5C549A6C20E2AC980053D3FF /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				5C3870EC20E560CD0035634E /* TargetWeight.VC.swift */,
+				5C3DDED020EC1D7500360B7B /* TargetWeight.ViewModel.swift */,
 			);
 			path = TargetWeight;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				5CF0AAE420E5543D009C5F36 /* Input.ViewController.swift in Sources */,
 				5C3870F320E562890035634E /* TargetDailyCalories.VC.swift in Sources */,
 				5C8E676620E8DBBE00D1755B /* WeightInput.ViewController.swift in Sources */,
+				5C3DDED120EC1D7500360B7B /* TargetWeight.ViewModel.swift in Sources */,
 				5C3870F120E5622E0035634E /* DateOfBirth.VC.swift in Sources */,
 				5CE8592F20E2D552001AC332 /* String+Extensions.swift in Sources */,
 				5C1EF78520E16AA6000C7213 /* Fonts.swift in Sources */,

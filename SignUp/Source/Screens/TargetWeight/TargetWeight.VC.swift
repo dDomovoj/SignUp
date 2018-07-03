@@ -17,16 +17,75 @@ extension TargetWeight {
 
   class ViewController: WeightInput.ViewController {
 
+    let viewModel: ViewModel
+
+    // MARK: - Init
+
+    required init(userProfile: UserProfile) {
+      viewModel = .init(userProfile: userProfile)
+      super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
       super.viewDidLoad()
       title = L10n.TargetWeight.title
       imageView.image = Images.TargetWeight.image.image
-      textLabel.text = L10n.TargetWeight.text(L10n.Common.Metrics.Weight.poundsFull,
-                                              "\(220.5) \(L10n.Common.Metrics.Weight.pounds)")
-      button.action = { [weak self] in
-        let viewController = YourHeight.ViewController()
-        self?.navigationController?.pushViewController(viewController, animated: true)
+
+      let amount = viewModel.hintTargetWeight()
+      let unit = viewModel.hintTargetUnit()
+      let unitFull = viewModel.hintTargetUnitFull()
+      textLabel.text = L10n.TargetWeight.text(unitFull, "\(amount) \(unit)")
+
+      weightInputView.unitString = unit
+      weightInputView.setValue(viewModel.initialTargetWeight())
+      weightInputView.valueDidChange = { [weak self] in
+        self?.valueDidChange(weight: $0)
       }
+
+      setupActions()
     }
   }
 }
+
+// MARK: - Private
+
+private extension TargetWeight.ViewController {
+
+  // MARK: Actions
+
+  func setupActions() {
+    button.action = { [weak self] in
+      self?.showYourHeight()
+    }
+  }
+
+  // MARK: Bindings
+
+  // Cold
+  func valueDidChange(weight: CGFloat) {
+    viewModel.updateWeight(weight)
+  }
+
+  // MARK: - Routing
+
+  func showYourHeight() {
+    viewModel.syncData { [weak self] error in
+      guard let `self` = self else { return }
+
+      if let error = error {
+        self.showAlert(title: L10n.Alerts.Titles.error, message: error.localizedDescription)
+        return
+      }
+
+      let viewController = YourHeight.ViewController()
+      self.navigationController?.pushViewController(viewController, animated: true)
+    }
+  }
+}
+

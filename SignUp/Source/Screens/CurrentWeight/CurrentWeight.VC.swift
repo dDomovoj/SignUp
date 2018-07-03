@@ -55,8 +55,8 @@ extension CurrentWeight {
       title = L10n.CurrentWeight.title
       imageView.image = Images.CurrentWeight.image.image
       metricsUnitsSwitch.isOn = viewModel.metrics == .metric
-      viewModel.metricsDidChange = { [weak self] in
-        self?.metricsDidChange(metrics: $0)
+      viewModel.metricsDidChange = { [weak self] _ in
+        self?.metricsDidChange()
       }
       weightInputView.valueDidChange = { [weak self] in
         self?.valueDidChange(weight: $0)
@@ -101,13 +101,14 @@ private extension CurrentWeight.ViewController {
   // MARK: Bindings
 
   // Hot
-  func metricsDidChange(metrics: Metrics) {
+  func metricsDidChange() {
     let amount = viewModel.hintCurrentWeight()
     let unit = viewModel.hintCurrentUnit()
+    let unitFull = viewModel.hintCurrentUnitFull()
     weightInputView.unitString = unit
-    weightInputView.setValue(viewModel.userProfile.bodyMass.asWeight(from: .metric, to: metrics))
+    weightInputView.setValue(viewModel.bodyMassInCurrentMetrics())
 
-    textLabel.text = L10n.CurrentWeight.text(L10n.Common.Metrics.Weight.poundsFull, "\(amount) \(unit)")
+    textLabel.text = L10n.CurrentWeight.text(unitFull, "\(amount) \(unit)")
     view.setNeedsLayout()
   }
 
@@ -120,13 +121,15 @@ private extension CurrentWeight.ViewController {
 
   func showTargetWeight() {
     viewModel.syncData { [weak self] error in
+      guard let `self` = self else { return }
+
       if let error = error {
-        self?.showAlert(title: L10n.Alerts.Titles.error, message: error.localizedDescription)
+        self.showAlert(title: L10n.Alerts.Titles.error, message: error.localizedDescription)
         return
       }
 
-      let viewController = TargetWeight.ViewController()
-      self?.navigationController?.pushViewController(viewController, animated: true)
+      let viewController = TargetWeight.ViewController(userProfile: self.viewModel.userProfile)
+      self.navigationController?.pushViewController(viewController, animated: true)
     }
   }
 }
