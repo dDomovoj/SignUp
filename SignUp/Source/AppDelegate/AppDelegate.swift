@@ -34,8 +34,8 @@ private extension AppDelegate {
 
   func setupUI() {
     UI.baseWidths = [.phone: 640]
-    let viewController = YourHeight.ViewController(userProfile: UserProfile(),
-                                                   userTarget: UserTarget(bodyMass: UserProfile().bodyMass))
+    let viewController = DateOfBirth.ViewController(userProfile: UserProfile(),
+                                                    userTarget: UserTarget(bodyMass: UserProfile().bodyMass))
     let navigationController = NavigationController(rootViewController: viewController)
     let bounds = UIScreen.main.bounds
     window = UIWindow(frame: bounds)

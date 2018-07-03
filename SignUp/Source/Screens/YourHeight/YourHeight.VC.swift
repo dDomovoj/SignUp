@@ -21,6 +21,8 @@ extension YourHeight {
       $0.textColor = Colors.black
       $0.numberOfLines = 1
       $0.font = Fonts.OpenSans.regular.font(size: 48.ui)
+      $0.adjustsFontSizeToFitWidth = true
+      $0.minimumScaleFactor = 2.0 / 3.0
     }
     let pickerView = UIPickerView(frame: .zero).with {
       $0.backgroundColor = Colors.white
@@ -100,7 +102,17 @@ private extension YourHeight.ViewController {
   // MARK: - Routing
 
   func showDateOfBirth() {
-//    let viewController = DateOfBirth.ViewController()
-//    self?.navigationController?.pushViewController(viewController, animated: true)
+    viewModel.syncData { [weak self] error in
+      guard let `self` = self else { return }
+
+      if let error = error {
+        self.showAlert(title: L10n.Alerts.Titles.error, message: error.localizedDescription)
+        return
+      }
+
+      let viewController = DateOfBirth.ViewController(userProfile: self.viewModel.userProfile,
+                                                      userTarget: self.viewModel.userTarget)
+      self.navigationController?.pushViewController(viewController, animated: true)
+    }
   }
 }

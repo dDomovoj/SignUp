@@ -17,7 +17,10 @@ extension CurrentWeight {
 
     var metrics: Metrics = preferredMetrics() { didSet { updateMetrics() } }
 
-    // MARK: - Hot callbacks
+    private static let smallestWeight: CGFloat = 20.0
+    private static let greatestWeight: CGFloat = 500.0
+
+    // MARK: - Bindings
 
     var metricsDidChange: ((Metrics) -> Void)? { didSet { metricsDidChange?(metrics) } }
 
@@ -71,9 +74,9 @@ extension CurrentWeight {
         guard let `self` = self else { return }
 
         switch self.userProfile.bodyMass {
-        case ..<20:
+        case ..<type(of: self).smallestWeight:
           completion(Error.tooLightWeight)
-        case 500...:
+        case (type(of: self).greatestWeight)...:
           completion(Error.tooHeavyWeight)
         default:
           if self.userProfile.isSyncedWithHealthKit {

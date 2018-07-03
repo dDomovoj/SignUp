@@ -128,8 +128,12 @@ internal enum L10n {
   internal enum Error {
     /// Entered weight is too heavy
     internal static let tooHeavyWeight = L10n.tr("Localizable", "error.too_heavy_weight")
+    /// Entered height is too high
+    internal static let tooHighHeight = L10n.tr("Localizable", "error.too_high_height")
     /// Entered weight is too light
     internal static let tooLightWeight = L10n.tr("Localizable", "error.too_light_weight")
+    /// Entered height is too low
+    internal static let tooLowHeight = L10n.tr("Localizable", "error.too_low_height")
   }
 
   internal enum GetStarted {

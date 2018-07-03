@@ -18,6 +18,9 @@ extension TargetWeight {
 
     private var metrics: Metrics { return userProfile.metrics }
 
+    private static let smallestWeight: CGFloat = 20.0
+    private static let greatestWeight: CGFloat = 500.0
+
     // MARK: - Init
 
     init(userProfile: UserProfile) {
@@ -68,9 +71,9 @@ extension TargetWeight {
         guard let `self` = self else { return }
 
         switch self.userTarget.bodyMass {
-        case ..<20:
+        case ..<type(of: self).smallestWeight:
           completion(Error.tooLightWeight)
-        case 500...:
+        case (type(of: self).greatestWeight)...:
           completion(Error.tooHeavyWeight)
         default:
           completion(nil)

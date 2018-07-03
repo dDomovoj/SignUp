@@ -18,32 +18,50 @@ extension CGFloat {
 
   static let foot: CGFloat = 0.3048
   static let inch: CGFloat = 0.0254
+  static let meter: CGFloat = 1.0
   static let centimeter: CGFloat = 0.01
-  static let pound: CGFloat = 0.453592
 
-  func asLength(in metrics: Metrics) -> (major: Int, minor: Int) {
-    switch metrics {
-    case .imperial:
-      let metersPerFoot = type(of: self).foot
-      let metersPerInch = type(of: self).inch
-      let feet = floor(self / metersPerFoot)
-      let inches = floor((self - feet * metersPerFoot) / metersPerInch)
-      return (Int(feet), Int(inches))
-    case .metric:
-      let metersPerCentimeter = type(of: self).centimeter
-      let meters = floor(self)
-      let centimeters = floor((self - meters) / metersPerCentimeter)
-      return (Int(meters), Int(centimeters))
+  static let pound: CGFloat = 0.453592
+  static let kilogram: CGFloat = 1.0
+
+  func asLength(from: Metrics, to: Metrics) -> (major: Int, minor: Int) {
+    switch (from, to) {
+    case (.metric, .metric):
+      let meter = type(of: self).meter
+      let centimeter = type(of: self).centimeter
+      let metersPerCentimeter = centimeter / meter
+      let metersCount = floor(self / meter)
+      let centimetersCount = floor((self - metersCount) / metersPerCentimeter)
+      return (Int(metersCount), Int(centimetersCount))
+    case (.imperial, .imperial):
+      let foot = type(of: self).foot
+      let inch = type(of: self).inch
+      let feetPerInch = inch / foot
+      let feetCount = floor(self / foot)
+      let inchesCount = floor((self - feetCount) / feetPerInch)
+      return (Int(feetCount), Int(inchesCount))
+    case (.metric, .imperial):
+      let foot = type(of: self).foot
+      let meter = type(of: self).meter
+      let feetPerMeter = meter / foot
+      let feet = self / feetPerMeter
+      return feet.asLength(from: .imperial, to: .imperial)
+    case (.imperial, .metric):
+      let foot = type(of: self).foot
+      let meter = type(of: self).meter
+      let metersPerFoot = foot / meter
+      let meters = self / metersPerFoot
+      return meters.asLength(from: .metric, to: .metric)
     }
   }
 
   func asWeight(from: Metrics, to: Metrics) -> CGFloat {
     switch (from, to) {
     case (.metric, .imperial):
-      let poundsPerKilogram = type(of: self).pound
+      let poundsPerKilogram = type(of: self).pound / type(of: self).kilogram
       return self / poundsPerKilogram
     case (.imperial, .metric):
-      let kilosPerPound = 1.0 / type(of: self).pound
+      let kilosPerPound = type(of: self).kilogram / type(of: self).pound
       return self / kilosPerPound
     default:
       return self

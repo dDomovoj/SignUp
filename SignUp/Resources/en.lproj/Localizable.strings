@@ -32,6 +32,8 @@
 "date_of_birth.text" = "Enter your date of birth. It will be used to calculate your age.";
 "error.too_heavy_weight" = "Entered weight is too heavy";
 "error.too_light_weight" = "Entered weight is too light";
+"error.too_low_height" = "Entered height is too low";
+"error.too_high_height" = "Entered height is too high";
 "get_started.title" = "Get Started";
 "get_started.text" = "Enter your gender, it’s important for\ncalories calculation - female bodies\nneed fewer calories";
 "get_started.health_app_data_usage" = "Use Health App data";

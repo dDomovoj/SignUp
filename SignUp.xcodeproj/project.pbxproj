@@ -51,7 +51,7 @@
 		5C549A7420E2AEA80053D3FF /* Welcome.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C549A7320E2AEA80053D3FF /* Welcome.ViewModel.swift */; };
 		5C8E676620E8DBBE00D1755B /* WeightInput.ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8E676520E8DBBE00D1755B /* WeightInput.ViewController.swift */; };
 		5C8E676920E8E65800D1755B /* PickerSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8E676820E8E65800D1755B /* PickerSource.swift */; };
-		5C8E676B20E8E82000D1755B /* YourHeight.Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8E676A20E8E82000D1755B /* YourHeight.Source.swift */; };
+		5C8E676B20E8E82000D1755B /* YourHeight.Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8E676A20E8E82000D1755B /* YourHeight.Value.swift */; };
 		5CA985BF20DE9D8C00ED937E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA985BE20DE9D8C00ED937E /* AppDelegate.swift */; };
 		5CA985C120DE9D8C00ED937E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA985C020DE9D8C00ED937E /* ViewController.swift */; };
 		5CA985C620DE9D8D00ED937E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CA985C520DE9D8D00ED937E /* Assets.xcassets */; };
@@ -59,6 +59,7 @@
 		5CBB180620E1772A00111110 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB180520E1772A00111110 /* Button.swift */; };
 		5CBB180820E17A0D00111110 /* PagingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB180720E17A0D00111110 /* PagingController.swift */; };
 		5CCF328520EC22BB00212556 /* UserTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF328420EC22BB00212556 /* UserTarget.swift */; };
+		5CCF328720EC378200212556 /* DateOfBirth.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF328620EC378200212556 /* DateOfBirth.ViewModel.swift */; };
 		5CE8592F20E2D552001AC332 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8592E20E2D552001AC332 /* String+Extensions.swift */; };
 		5CE8593220E2D8BF001AC332 /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8593120E2D8BF001AC332 /* SmallButton.swift */; };
 		5CE8593420E2D91D001AC332 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8593320E2D91D001AC332 /* UIImage+Extensions.swift */; };
@@ -115,7 +116,7 @@
 		5C549A7320E2AEA80053D3FF /* Welcome.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.ViewModel.swift; sourceTree = "<group>"; };
 		5C8E676520E8DBBE00D1755B /* WeightInput.ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightInput.ViewController.swift; sourceTree = "<group>"; };
 		5C8E676820E8E65800D1755B /* PickerSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSource.swift; sourceTree = "<group>"; };
-		5C8E676A20E8E82000D1755B /* YourHeight.Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourHeight.Source.swift; sourceTree = "<group>"; };
+		5C8E676A20E8E82000D1755B /* YourHeight.Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourHeight.Value.swift; sourceTree = "<group>"; };
 		5CA985BB20DE9D8C00ED937E /* SignUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA985BE20DE9D8C00ED937E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CA985C020DE9D8C00ED937E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +125,7 @@
 		5CBB180520E1772A00111110 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		5CBB180720E17A0D00111110 /* PagingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingController.swift; sourceTree = "<group>"; };
 		5CCF328420EC22BB00212556 /* UserTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTarget.swift; sourceTree = "<group>"; };
+		5CCF328620EC378200212556 /* DateOfBirth.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfBirth.ViewModel.swift; sourceTree = "<group>"; };
 		5CE8592E20E2D552001AC332 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		5CE8593120E2D8BF001AC332 /* SmallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
 		5CE8593320E2D91D001AC332 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
@@ -273,7 +275,7 @@
 			children = (
 				5C3870EE20E5613C0035634E /* YourHeight.VC.swift */,
 				5C3DDED220EC226800360B7B /* YourHeight.ViewModel.swift */,
-				5C8E676A20E8E82000D1755B /* YourHeight.Source.swift */,
+				5C8E676A20E8E82000D1755B /* YourHeight.Value.swift */,
 			);
 			path = YourHeight;
 			sourceTree = "<group>";
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				5C3870F020E5622E0035634E /* DateOfBirth.VC.swift */,
+				5CCF328620EC378200212556 /* DateOfBirth.ViewModel.swift */,
 			);
 			path = DateOfBirth;
 			sourceTree = "<group>";
@@ -606,7 +609,7 @@
 				5C1EF79020E16FC2000C7213 /* ImageView.swift in Sources */,
 				5CF0AAE220E41224009C5F36 /* UI.Const.swift in Sources */,
 				5C3DDEC720EA273200360B7B /* UserProfile.swift in Sources */,
-				5C8E676B20E8E82000D1755B /* YourHeight.Source.swift in Sources */,
+				5C8E676B20E8E82000D1755B /* YourHeight.Value.swift in Sources */,
 				5C3870F520E567170035634E /* HideButton.swift in Sources */,
 				5C8E676920E8E65800D1755B /* PickerSource.swift in Sources */,
 				5CF0AAE420E5543D009C5F36 /* Input.ViewController.swift in Sources */,
@@ -629,6 +632,7 @@
 				5C3DDED320EC226800360B7B /* YourHeight.ViewModel.swift in Sources */,
 				5C10392320DEA6D0009EE56A /* Colors.swift in Sources */,
 				5C1E98F820E930360081B04F /* TargetDailyCalories.Source.swift in Sources */,
+				5CCF328720EC378200212556 /* DateOfBirth.ViewModel.swift in Sources */,
 				5C25B12120EA1B8200CE0612 /* HealthKitService.swift in Sources */,
 				5C3870ED20E560CD0035634E /* TargetWeight.VC.swift in Sources */,
 				5C3870EF20E5613C0035634E /* YourHeight.VC.swift in Sources */,

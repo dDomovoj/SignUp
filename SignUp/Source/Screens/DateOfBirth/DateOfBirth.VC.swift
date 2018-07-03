@@ -37,6 +37,19 @@ extension DateOfBirth {
       return Date().addingTimeInterval(-minAge)
     }()
 
+    let viewModel: ViewModel
+
+    // MARK: - Init
+
+    required init(userProfile: UserProfile, userTarget: UserTarget) {
+      viewModel = .init(userProfile: userProfile, userTarget: userTarget)
+      super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - Lifecycle
 
     override func loadView() {
