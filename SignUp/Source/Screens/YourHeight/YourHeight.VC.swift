@@ -25,7 +25,21 @@ extension YourHeight {
     let pickerView = UIPickerView(frame: .zero).with {
       $0.backgroundColor = Colors.white
     }
-    let source = Source()
+
+    // MARK: - Properties
+
+    let viewModel: ViewModel
+
+    // MARK: - Init
+
+    required init(userProfile: UserProfile, userTarget: UserTarget) {
+      viewModel = .init(userProfile: userProfile, userTarget: userTarget)
+      super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - Lifecycle
 
@@ -37,19 +51,11 @@ extension YourHeight {
 
     override func viewDidLoad() {
       super.viewDidLoad()
-      source.pickerView = pickerView
-      source.action = { [weak self] in
-        self?.inputLabel.text = $0.reduce("") { $0 + " \($1.title)" }
-        self?.layoutLabels()
-      }
-
+      viewModel.source.pickerView = pickerView
       title = L10n.YourHeight.title
       imageView.image = Images.Height.image.image
       textLabel.text = L10n.YourHeight.text
-      button.action = { [weak self] in
-        let viewController = DateOfBirth.ViewController()
-        self?.navigationController?.pushViewController(viewController, animated: true)
-      }
+      setupActions()
     }
 
     override func viewDidLayoutSubviews() {
@@ -77,5 +83,24 @@ private extension YourHeight.ViewController {
     textLabel.pin.hCenter().maxWidth(75%)
       .top(to: inputLabel.edge.bottom).marginTop(1.5%)
       .sizeToFit(.widthFlexible)
+  }
+
+  // MARK: - Actions
+
+  func setupActions() {
+    button.action = { [weak self] in
+      self?.showDateOfBirth()
+    }
+    viewModel.didUpdateHeight = { [weak self] heightText in
+      self?.inputLabel.text = heightText
+      self?.layoutLabels()
+    }
+  }
+
+  // MARK: - Routing
+
+  func showDateOfBirth() {
+//    let viewController = DateOfBirth.ViewController()
+//    self?.navigationController?.pushViewController(viewController, animated: true)
   }
 }

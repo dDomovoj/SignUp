@@ -1,5 +1,5 @@
 //
-//  Welcome.ViewController.swift
+//  Welcome.VC.swift
 //  SignUp
 //
 //  Created by Dmitry Duleba on 6/25/18.

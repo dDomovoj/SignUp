@@ -41,14 +41,42 @@ internal enum L10n {
     internal enum Metrics {
 
       internal enum Length {
-        /// cm
-        internal static let centimeters = L10n.tr("Localizable", "common.metrics.length.centimeters")
-        /// ft
-        internal static let feet = L10n.tr("Localizable", "common.metrics.length.feet")
-        /// inches
-        internal static let inches = L10n.tr("Localizable", "common.metrics.length.inches")
-        /// m
-        internal static let meters = L10n.tr("Localizable", "common.metrics.length.meters")
+
+        internal enum Centimeters {
+          /// centimeters
+          internal static let plural = L10n.tr("Localizable", "common.metrics.length.centimeters.plural")
+          /// cm
+          internal static let short = L10n.tr("Localizable", "common.metrics.length.centimeters.short")
+          /// centimeter
+          internal static let single = L10n.tr("Localizable", "common.metrics.length.centimeters.single")
+        }
+
+        internal enum Feet {
+          /// feet
+          internal static let plural = L10n.tr("Localizable", "common.metrics.length.feet.plural")
+          /// ft
+          internal static let short = L10n.tr("Localizable", "common.metrics.length.feet.short")
+          /// foot
+          internal static let single = L10n.tr("Localizable", "common.metrics.length.feet.single")
+        }
+
+        internal enum Inches {
+          /// inches
+          internal static let plural = L10n.tr("Localizable", "common.metrics.length.inches.plural")
+          /// in
+          internal static let short = L10n.tr("Localizable", "common.metrics.length.inches.short")
+          /// inch
+          internal static let single = L10n.tr("Localizable", "common.metrics.length.inches.single")
+        }
+
+        internal enum Meters {
+          /// meters
+          internal static let plural = L10n.tr("Localizable", "common.metrics.length.meters.plural")
+          /// m
+          internal static let short = L10n.tr("Localizable", "common.metrics.length.meters.short")
+          /// meter
+          internal static let single = L10n.tr("Localizable", "common.metrics.length.meters.single")
+        }
       }
 
       internal enum Time {
@@ -57,14 +85,24 @@ internal enum L10n {
       }
 
       internal enum Weight {
-        /// kg
-        internal static let kilos = L10n.tr("Localizable", "common.metrics.weight.kilos")
-        /// kilograms
-        internal static let kilosFull = L10n.tr("Localizable", "common.metrics.weight.kilos_full")
-        /// lb
-        internal static let pounds = L10n.tr("Localizable", "common.metrics.weight.pounds")
-        /// pounds
-        internal static let poundsFull = L10n.tr("Localizable", "common.metrics.weight.pounds_full")
+
+        internal enum Kilos {
+          /// kilograms
+          internal static let plural = L10n.tr("Localizable", "common.metrics.weight.kilos.plural")
+          /// kg
+          internal static let short = L10n.tr("Localizable", "common.metrics.weight.kilos.short")
+          /// kilogram
+          internal static let single = L10n.tr("Localizable", "common.metrics.weight.kilos.single")
+        }
+
+        internal enum Pounds {
+          /// pounds
+          internal static let plural = L10n.tr("Localizable", "common.metrics.weight.pounds.plural")
+          /// lb
+          internal static let short = L10n.tr("Localizable", "common.metrics.weight.pounds.short")
+          /// pound
+          internal static let single = L10n.tr("Localizable", "common.metrics.weight.pounds.single")
+        }
       }
     }
   }

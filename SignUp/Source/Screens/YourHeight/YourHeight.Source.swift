@@ -12,17 +12,17 @@ extension YourHeight {
 
   enum Value: PickerElement {
 
-    case feet(Int)
-    case inches(Int)
+    case major(Int)
+    case minor(Int)
 
     var title: String {
       switch self {
-      case .feet(let feet):
+      case .major(let feet):
         if feet == 1 {
           return "1 Foot"
         }
         return "\(feet) Feet"
-      case .inches(let inches):
+      case .minor(let inches):
         if inches == 1 {
           return "1 Inch"
         }
@@ -33,12 +33,12 @@ extension YourHeight {
 
   class Source: PickerSource<Value> {
 
-    override init() {
-      super.init()
-      let feet = (1...7).map { Value.feet($0) }
-      let inches = (0...11).map { Value.inches($0) }
-      sections = [feet, inches]
-      setSelectedItems([.feet(6), .inches(0)])
-    }
+//    override init() {
+//      super.init()
+//      let feet = (1...7).map { Value.feet($0) }
+//      let inches = (0...11).map { Value.inches($0) }
+//      sections = [feet, inches]
+//      setSelectedItems([.feet(6), .inches(0)])
+//    }
   }
 }

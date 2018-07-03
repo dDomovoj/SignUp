@@ -41,7 +41,7 @@ extension TargetDailyCalories {
       numberFormatter.alwaysShowsDecimalSeparator = false
       let number = NSNumber(value: Double(rate))
       let value = numberFormatter.string(from: number)
-      return value.map { "\($0) \(L10n.Common.Metrics.Weight.pounds)/\(L10n.Common.Metrics.Time.week)" } ?? "-"
+      return value.map { "\($0) \(L10n.Common.Metrics.Weight.Pounds.short)/\(L10n.Common.Metrics.Time.week)" } ?? "-"
     }
   }
 

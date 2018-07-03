@@ -1,5 +1,5 @@
 //
-//  GetStarted.ViewController.swift
+//  GetStarted.VC.swift
 //  SignUp
 //
 //  Created by Dmitry Duleba on 6/25/18.

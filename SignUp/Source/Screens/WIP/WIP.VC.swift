@@ -1,5 +1,5 @@
 //
-//  WIP.ViewController.swift
+//  WIP.VC.swift
 //  SignUp
 //
 //  Created by Dmitry Duleba on 6/27/18.

@@ -14,6 +14,7 @@ extension TargetWeight {
   class ViewModel {
 
     private(set) var userProfile: UserProfile
+    private(set) var userTarget: UserTarget
 
     private var metrics: Metrics { return userProfile.metrics }
 
@@ -21,6 +22,7 @@ extension TargetWeight {
 
     init(userProfile: UserProfile) {
       self.userProfile = userProfile
+      userTarget = UserTarget(bodyMass: userProfile.bodyMass * 0.9)
     }
 
     // MARK: - Public
@@ -37,35 +39,35 @@ extension TargetWeight {
     func hintTargetUnit() -> String {
       switch metrics {
       case .imperial:
-        return L10n.Common.Metrics.Weight.pounds
+        return L10n.Common.Metrics.Weight.Pounds.short
       case .metric:
-        return L10n.Common.Metrics.Weight.kilos
+        return L10n.Common.Metrics.Weight.Kilos.short
       }
     }
 
     func hintTargetUnitFull() -> String {
       switch metrics {
       case .imperial:
-        return L10n.Common.Metrics.Weight.poundsFull
+        return L10n.Common.Metrics.Weight.Pounds.plural
       case .metric:
-        return L10n.Common.Metrics.Weight.kilosFull
+        return L10n.Common.Metrics.Weight.Kilos.plural
       }
     }
 
     func initialTargetWeight() -> CGFloat {
-      return userProfile.bodyMass.asWeight(from: .metric, to: metrics) * 0.9
+      return userTarget.bodyMass.asWeight(from: .metric, to: metrics)
     }
 
     func updateWeight(_ value: CGFloat) {
       let bodyMass = value.asWeight(from: metrics, to: .metric)
-      userProfile.targetBodyMass = bodyMass
+      userTarget.bodyMass = bodyMass
     }
 
     func syncData(completion: @escaping (Error?) -> Void) {
       DispatchQueue.main.async { [weak self] in
         guard let `self` = self else { return }
 
-        switch self.userProfile.targetBodyMass {
+        switch self.userTarget.bodyMass {
         case ..<20:
           completion(Error.tooLightWeight)
         case 500...:

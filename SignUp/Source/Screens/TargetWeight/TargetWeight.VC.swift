@@ -83,7 +83,8 @@ private extension TargetWeight.ViewController {
         return
       }
 
-      let viewController = YourHeight.ViewController()
+      let viewController = YourHeight.ViewController(userProfile: self.viewModel.userProfile,
+                                                     userTarget: self.viewModel.userTarget)
       self.navigationController?.pushViewController(viewController, animated: true)
     }
   }

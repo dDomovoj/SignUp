@@ -42,18 +42,18 @@ extension CurrentWeight {
     func hintCurrentUnit() -> String {
       switch metrics {
       case .imperial:
-        return L10n.Common.Metrics.Weight.pounds
+        return L10n.Common.Metrics.Weight.Pounds.short
       case .metric:
-        return L10n.Common.Metrics.Weight.kilos
+        return L10n.Common.Metrics.Weight.Kilos.short
       }
     }
 
     func hintCurrentUnitFull() -> String {
       switch metrics {
       case .imperial:
-        return L10n.Common.Metrics.Weight.poundsFull
+        return L10n.Common.Metrics.Weight.Pounds.plural
       case .metric:
-        return L10n.Common.Metrics.Weight.kilosFull
+        return L10n.Common.Metrics.Weight.Kilos.plural
       }
     }
 

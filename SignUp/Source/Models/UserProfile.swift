@@ -24,7 +24,6 @@ struct UserProfile: Codable {
 
   var isSyncedWithHealthKit = false
   var metrics = Metrics.metric
-  var targetBodyMass = Defaults.bodyMass
 }
 
 // MARK: - Gender

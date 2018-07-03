@@ -180,7 +180,7 @@ private extension TargetDailyCalories.ViewController {
   func showText() {
     let isLoosingWeight = true
     if isLoosingWeight {
-      let weightPerWeek = "1 \(L10n.Common.Metrics.Weight.pounds)/\(L10n.Common.Metrics.Time.week)"
+      let weightPerWeek = "1 \(L10n.Common.Metrics.Weight.Pounds.short)/\(L10n.Common.Metrics.Time.week)"
       let losingText = L10n.TargetDailyCalories.losingWeightText(weightPerWeek)
       textLabel.text = L10n.TargetDailyCalories.weightText(losingText)
     } else {
