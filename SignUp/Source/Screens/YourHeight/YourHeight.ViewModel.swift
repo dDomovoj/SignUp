@@ -81,9 +81,10 @@ private extension YourHeight.ViewModel {
   }
 
   func sourceSections() -> [Source.Section] {
+    let height = type(of: self).greatestHeight.asLength(from: .metric, to: metrics)
     switch metrics {
     case .imperial:
-      let feetCount = type(of: self).greatestHeight.asLength(from: .imperial, to: .imperial).major
+      let feetCount = height.major
       let feet = (0...feetCount).map {
         localizedValueGenerator($0, foot, self.feet)
       }
@@ -95,7 +96,7 @@ private extension YourHeight.ViewModel {
 
       return [feet, inches]
     case .metric:
-      let metersCount = type(of: self).greatestHeight.asLength(from: .metric, to: .metric).major
+      let metersCount = height.major
       let meters = (0...metersCount).map {
         localizedValueGenerator($0, meter, self.meters)
       }

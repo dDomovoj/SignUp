@@ -40,7 +40,7 @@ extension TargetWeight {
       let amount = viewModel.hintTargetWeight()
       let unit = viewModel.hintTargetUnit()
       let unitFull = viewModel.hintTargetUnitFull()
-      textLabel.text = L10n.TargetWeight.text(unitFull, "\(amount) \(unit)")
+      textLabel.text = L10n.TargetWeight.text(unitFull, "\(amount.formatted(".1")) \(unit)")
 
       weightInputView.unitString = unit
       weightInputView.setValue(viewModel.initialTargetWeight())

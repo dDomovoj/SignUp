@@ -29,28 +29,28 @@ extension CGFloat {
     case (.metric, .metric):
       let meter = type(of: self).meter
       let centimeter = type(of: self).centimeter
-      let metersPerCentimeter = centimeter / meter
-      let metersCount = floor(self / meter)
-      let centimetersCount = floor((self - metersCount) / metersPerCentimeter)
+      let centimetersPerMeter = centimeter / meter
+      let metersCount = floor(self)
+      let centimetersCount = floor((self - metersCount) / centimetersPerMeter)
       return (Int(metersCount), Int(centimetersCount))
     case (.imperial, .imperial):
       let foot = type(of: self).foot
       let inch = type(of: self).inch
-      let feetPerInch = inch / foot
-      let feetCount = floor(self / foot)
-      let inchesCount = floor((self - feetCount) / feetPerInch)
+      let inchesPerFoot = inch / foot
+      let feetCount = floor(self)
+      let inchesCount = floor((self - feetCount) / inchesPerFoot)
       return (Int(feetCount), Int(inchesCount))
     case (.metric, .imperial):
       let foot = type(of: self).foot
       let meter = type(of: self).meter
-      let feetPerMeter = meter / foot
+      let feetPerMeter = foot / meter
       let feet = self / feetPerMeter
       return feet.asLength(from: .imperial, to: .imperial)
     case (.imperial, .metric):
       let foot = type(of: self).foot
       let meter = type(of: self).meter
-      let metersPerFoot = foot / meter
-      let meters = self / metersPerFoot
+      let feetPerMeter = foot / meter
+      let meters = self * feetPerMeter
       return meters.asLength(from: .metric, to: .metric)
     }
   }

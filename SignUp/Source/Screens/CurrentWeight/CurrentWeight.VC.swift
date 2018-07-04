@@ -108,7 +108,7 @@ private extension CurrentWeight.ViewController {
     weightInputView.unitString = unit
     weightInputView.setValue(viewModel.bodyMassInCurrentMetrics())
 
-    textLabel.text = L10n.CurrentWeight.text(unitFull, "\(amount) \(unit)")
+    textLabel.text = L10n.CurrentWeight.text(unitFull, "\(amount.formatted(".1")) \(unit)")
     view.setNeedsLayout()
   }
 

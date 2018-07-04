@@ -25,18 +25,13 @@ extension TargetWeight {
 
     init(userProfile: UserProfile) {
       self.userProfile = userProfile
-      userTarget = UserTarget(bodyMass: userProfile.bodyMass * 0.9)
+      userTarget = UserTarget(bodyMass: userProfile.bodyMass * 0.95)
     }
 
     // MARK: - Public
 
     func hintTargetWeight() -> CGFloat {
-      switch metrics {
-      case .imperial:
-        return 220.5
-      case .metric:
-        return 105.5
-      }
+      return (userProfile.bodyMass * 0.95).asWeight(from: .metric, to: metrics)
     }
 
     func hintTargetUnit() -> String {

@@ -24,6 +24,11 @@ class LargeButton: Button {
     super.didMoveToSuperview()
     update()
   }
+
+  override func tintColorDidChange() {
+    super.tintColorDidChange()
+    update()
+  }
 }
 
 // MARK: - Private
@@ -33,6 +38,8 @@ private extension LargeButton {
   func update() {
     guard superview != nil else { return }
 
+    let tintColor = self.tintColor ?? self.color
+    let color = tintColor.hsbaValue().saturation == 0 ? tintColor : self.color
     let image = UIImage.pixel(with: color)
     setBackgroundImage(image, for: .normal)
 

@@ -43,6 +43,11 @@ class HideButton: Button {
     titleEdgeInsets = UIEdgeInsets(0.0, -imageOffset, 0.0, imageOffset)
     imageEdgeInsets = UIEdgeInsets(0.0, titleOffset, 0.0, -titleOffset)
   }
+
+  override func tintColorDidChange() {
+    super.tintColorDidChange()
+    update()
+  }
 }
 
 // MARK: - Private
@@ -52,6 +57,8 @@ private extension HideButton {
   func update() {
     guard superview != nil else { return }
 
+    let tintColor = self.tintColor ?? self.color
+    let color = tintColor.hsbaValue().saturation == 0 ? tintColor : self.color
     let image = UIImage.pixel(with: color)
     setBackgroundImage(image, for: .normal)
 
@@ -60,6 +67,6 @@ private extension HideButton {
       .withTextColor(Colors.white)
     setAttributedTitle(title, for: .normal)
     setImage(Images.Ui.hideButton.image, for: .normal)
-    tintColor = Colors.white.withAlphaComponent(0.7)
+    imageView?.tintColor = Colors.white.withAlphaComponent(0.7)
   }
 }

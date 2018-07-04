@@ -38,7 +38,7 @@ extension CurrentWeight {
       case .imperial:
         return 220.5
       case .metric:
-        return 105.5
+        return 135.5
       }
     }
 
@@ -93,14 +93,16 @@ extension CurrentWeight {
 
 private extension CurrentWeight.ViewModel {
 
+  static var imperialLocaleIdentifiers: [String] {
+    return ["en_US"]
+  }
+
   static func preferredMetrics() -> Metrics {
     let locale = Locale.current
-    switch locale.identifier {
-    case "en-US":
+    if imperialLocaleIdentifiers.contains(locale.identifier) {
       return .imperial
-    default:
-      return .metric
     }
+    return .metric
   }
 
   func updateMetrics() {
