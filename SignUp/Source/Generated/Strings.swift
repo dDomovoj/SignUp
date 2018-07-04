@@ -162,6 +162,10 @@ internal enum L10n {
   internal enum TargetDailyCalories {
     /// by
     internal static let by = L10n.tr("Localizable", "target_daily_calories.by")
+    /// Gaining
+    internal static let gaining = L10n.tr("Localizable", "target_daily_calories.gaining")
+    /// Losing
+    internal static let losing = L10n.tr("Localizable", "target_daily_calories.losing")
     /// A steady rate, such as losing %@, makes you more successful in the long run.
     internal static func losingWeightText(_ p1: String) -> String {
       return L10n.tr("Localizable", "target_daily_calories.losing_weight_text", p1)

@@ -16,7 +16,7 @@
 		5C10392720E15B69009EE56A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C10392620E15B69009EE56A /* NavigationController.swift */; };
 		5C193E7320E913FA00AFE122 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C193E7220E913FA00AFE122 /* Roboto-Regular.ttf */; };
 		5C193E7520E91ABA00AFE122 /* GenericInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C193E7420E91ABA00AFE122 /* GenericInputView.swift */; };
-		5C1E98F820E930360081B04F /* TargetDailyCalories.Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1E98F720E930360081B04F /* TargetDailyCalories.Source.swift */; };
+		5C1E98F820E930360081B04F /* TargetDailyCalories.WeekRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1E98F720E930360081B04F /* TargetDailyCalories.WeekRate.swift */; };
 		5C1EF78120E169C9000C7213 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C1EF77E20E169C8000C7213 /* OpenSans-Regular.ttf */; };
 		5C1EF78220E169C9000C7213 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C1EF77F20E169C8000C7213 /* OpenSans-Light.ttf */; };
 		5C1EF78320E169C9000C7213 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C1EF78020E169C9000C7213 /* OpenSans-Semibold.ttf */; };
@@ -61,6 +61,8 @@
 		5CCF328520EC22BB00212556 /* UserTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF328420EC22BB00212556 /* UserTarget.swift */; };
 		5CCF328720EC378200212556 /* DateOfBirth.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF328620EC378200212556 /* DateOfBirth.ViewModel.swift */; };
 		5CCF328920EC3D0C00212556 /* TargetDailyCaloies.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF328820EC3D0C00212556 /* TargetDailyCaloies.ViewModel.swift */; };
+		5CCF328C20EC51F900212556 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF328B20EC51F900212556 /* PersistenceService.swift */; };
+		5CCF328E20EC537800212556 /* CaloriesCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF328D20EC537800212556 /* CaloriesCalculator.swift */; };
 		5CE8592F20E2D552001AC332 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8592E20E2D552001AC332 /* String+Extensions.swift */; };
 		5CE8593220E2D8BF001AC332 /* SmallButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8593120E2D8BF001AC332 /* SmallButton.swift */; };
 		5CE8593420E2D91D001AC332 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8593320E2D91D001AC332 /* UIImage+Extensions.swift */; };
@@ -81,7 +83,7 @@
 		5C10392620E15B69009EE56A /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		5C193E7220E913FA00AFE122 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		5C193E7420E91ABA00AFE122 /* GenericInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericInputView.swift; sourceTree = "<group>"; };
-		5C1E98F720E930360081B04F /* TargetDailyCalories.Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetDailyCalories.Source.swift; sourceTree = "<group>"; };
+		5C1E98F720E930360081B04F /* TargetDailyCalories.WeekRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetDailyCalories.WeekRate.swift; sourceTree = "<group>"; };
 		5C1EF77E20E169C8000C7213 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		5C1EF77F20E169C8000C7213 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		5C1EF78020E169C9000C7213 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
@@ -128,6 +130,8 @@
 		5CCF328420EC22BB00212556 /* UserTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTarget.swift; sourceTree = "<group>"; };
 		5CCF328620EC378200212556 /* DateOfBirth.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfBirth.ViewModel.swift; sourceTree = "<group>"; };
 		5CCF328820EC3D0C00212556 /* TargetDailyCaloies.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetDailyCaloies.ViewModel.swift; sourceTree = "<group>"; };
+		5CCF328B20EC51F900212556 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		5CCF328D20EC537800212556 /* CaloriesCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesCalculator.swift; sourceTree = "<group>"; };
 		5CE8592E20E2D552001AC332 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		5CE8593120E2D8BF001AC332 /* SmallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
 		5CE8593320E2D91D001AC332 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 		5C10390820DEA4A2009EE56A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5CCF328A20EC51CA00212556 /* PersistenceService */,
 				5C25B12220EA1B8600CE0612 /* HealthKit */,
 			);
 			path = Services;
@@ -296,7 +301,7 @@
 			children = (
 				5C3870F220E562890035634E /* TargetDailyCalories.VC.swift */,
 				5CCF328820EC3D0C00212556 /* TargetDailyCaloies.ViewModel.swift */,
-				5C1E98F720E930360081B04F /* TargetDailyCalories.Source.swift */,
+				5C1E98F720E930360081B04F /* TargetDailyCalories.WeekRate.swift */,
 			);
 			path = TargetDailyCalories;
 			sourceTree = "<group>";
@@ -399,6 +404,14 @@
 			path = PagingController;
 			sourceTree = "<group>";
 		};
+		5CCF328A20EC51CA00212556 /* PersistenceService */ = {
+			isa = PBXGroup;
+			children = (
+				5CCF328B20EC51F900212556 /* PersistenceService.swift */,
+			);
+			path = PersistenceService;
+			sourceTree = "<group>";
+		};
 		5CE8592D20E2D543001AC332 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +444,7 @@
 		5CF0AAE020E41212009C5F36 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5CCF328D20EC537800212556 /* CaloriesCalculator.swift */,
 				5C3DDEC820EA29A000360B7B /* Metrics.swift */,
 				5CF0AAE120E41224009C5F36 /* UI.Const.swift */,
 			);
@@ -614,6 +628,7 @@
 				5C3DDEC720EA273200360B7B /* UserProfile.swift in Sources */,
 				5C8E676B20E8E82000D1755B /* YourHeight.Value.swift in Sources */,
 				5C3870F520E567170035634E /* HideButton.swift in Sources */,
+				5CCF328C20EC51F900212556 /* PersistenceService.swift in Sources */,
 				5C8E676920E8E65800D1755B /* PickerSource.swift in Sources */,
 				5CF0AAE420E5543D009C5F36 /* Input.ViewController.swift in Sources */,
 				5C3870F320E562890035634E /* TargetDailyCalories.VC.swift in Sources */,
@@ -634,7 +649,7 @@
 				5C1EF78E20E16FBB000C7213 /* Label.swift in Sources */,
 				5C3DDED320EC226800360B7B /* YourHeight.ViewModel.swift in Sources */,
 				5C10392320DEA6D0009EE56A /* Colors.swift in Sources */,
-				5C1E98F820E930360081B04F /* TargetDailyCalories.Source.swift in Sources */,
+				5C1E98F820E930360081B04F /* TargetDailyCalories.WeekRate.swift in Sources */,
 				5CCF328720EC378200212556 /* DateOfBirth.ViewModel.swift in Sources */,
 				5C25B12120EA1B8200CE0612 /* HealthKitService.swift in Sources */,
 				5C3870ED20E560CD0035634E /* TargetWeight.VC.swift in Sources */,
@@ -657,6 +672,7 @@
 				5CBB180620E1772A00111110 /* Button.swift in Sources */,
 				5C549A7220E2ADC30053D3FF /* Welcome.PageCell.swift in Sources */,
 				5C3870F720E568DC0035634E /* NumericInputView.swift in Sources */,
+				5CCF328E20EC537800212556 /* CaloriesCalculator.swift in Sources */,
 				5C1EF78920E16C9F000C7213 /* Welcome.VC.swift in Sources */,
 				5C3DDEC920EA29A000360B7B /* Metrics.swift in Sources */,
 				5C3870E920E557B00035634E /* CurrentWeight.VC.swift in Sources */,

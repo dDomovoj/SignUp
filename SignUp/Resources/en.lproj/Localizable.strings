@@ -48,6 +48,8 @@
 "target_daily_calories.by" = "by";
 "target_daily_calories.weekly_rate" = "Weekly Rate";
 "target_daily_calories.target_date" = "Target Date";
+"target_daily_calories.gaining" = "Gaining";
+"target_daily_calories.losing" = "Losing";
 "target_daily_calories.losing_weight_text" = "A steady rate, such as losing %@, makes you more successful in the long run.";
 "target_daily_calories.weight_text" = "Select target date or weekly rate to calculate target daily calories. %@\n\nYou can override and customize MyNetDiary’s calculations on the detailed Plan screen in the app.";
 "welcome.paging.first.title" = "Welcome\nto MyNetDiary";

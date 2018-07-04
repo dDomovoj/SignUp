@@ -85,24 +85,24 @@ private extension YourHeight.ViewModel {
     case .imperial:
       let feetCount = type(of: self).greatestHeight.asLength(from: .imperial, to: .imperial).major
       let feet = (0...feetCount).map {
-        valueGenerator($0, foot, self.feet)
+        localizedValueGenerator($0, foot, self.feet)
       }
 
       let inchesCount = Int(ceil(CGFloat.foot / CGFloat.inch))
       let inches = (1..<inchesCount).map {
-        valueGenerator($0, inch, self.inches)
+        localizedValueGenerator($0, inch, self.inches)
       }
 
       return [feet, inches]
     case .metric:
       let metersCount = type(of: self).greatestHeight.asLength(from: .metric, to: .metric).major
       let meters = (0...metersCount).map {
-        valueGenerator($0, meter, self.meters)
+        localizedValueGenerator($0, meter, self.meters)
       }
 
       let centimetersCount = Int(ceil(CGFloat.meter / CGFloat.centimeter))
       let centimeters = (1..<centimetersCount).map {
-        valueGenerator($0, centimeter, self.centimeters)
+        localizedValueGenerator($0, centimeter, self.centimeters)
       }
       return [meters, centimeters]
     }
@@ -113,22 +113,22 @@ private extension YourHeight.ViewModel {
     let major: YourHeight.Value
     switch metrics {
     case .metric:
-      major = valueGenerator(height.major, meter, meters)
+      major = localizedValueGenerator(height.major, meter, meters)
     case .imperial:
-      major = valueGenerator(height.major, foot, feet)
+      major = localizedValueGenerator(height.major, foot, feet)
     }
 
     let minor: YourHeight.Value
     switch metrics {
     case .metric:
-      minor = valueGenerator(height.minor, centimeter, centimeters)
+      minor = localizedValueGenerator(height.minor, centimeter, centimeters)
     case .imperial:
-      minor = valueGenerator(height.minor, inch, inches)
+      minor = localizedValueGenerator(height.minor, inch, inches)
     }
     return [major, minor]
   }
 
-  func valueGenerator(_ amount: Int, _ single: String, _ plural: String) -> YourHeight.Value {
+  func localizedValueGenerator(_ amount: Int, _ single: String, _ plural: String) -> YourHeight.Value {
     return YourHeight.Value(amount: amount) {
       if $0 != 11, ($0 % 10) == 1 {
         return "\($0) \(single)"

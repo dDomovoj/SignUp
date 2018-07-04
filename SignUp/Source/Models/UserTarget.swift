@@ -11,12 +11,21 @@ import struct UIKit.CGFloat
 
 struct UserTarget: Codable {
 
+  enum Activity: String, Codable {
+    case sedentary
+    case lowActive
+    case active
+    case veryActive
+  }
+
   enum Defaults {
-    static let date = Date().addingTimeInterval(.week * 4)
+    static let date = Calendar.current.date(byAdding: .day, value: 28, to: Date())
+      ??  Date().addingTimeInterval(.week * 4)
   }
 
   var date: Date = Defaults.date
   var bodyMass: CGFloat
+  var weekRate: CGFloat = 1.0 * .pound
 
   init(bodyMass: CGFloat) {
     self.bodyMass = bodyMass
